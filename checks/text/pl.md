@@ -13,7 +13,7 @@ Piszę oprogramowanie do transkrypcji mowy offline na komputery Apple i prowadz�
 
 ## Otwarty kod
 
-- [BETON](https://github.com/NetBr3ak/beton): wtyczka do Claude Code. Po każdym wywołaniu `Write`, `Edit` lub `MultiEdit` uruchamia zainstalowane w projekcie lintery, sprawdzanie typów i testy dobrane według nazwy pliku. Blokuje też obejścia, takie jak `# noqa` czy pomijanie testów.
+- [BETON](https://github.com/NetBr3ak/beton): wtyczka do Claude Code. Po każdym wywołaniu `Write`, `Edit` lub `MultiEdit` uruchamia zainstalowane lintery, sprawdzanie typów i testy dobrane według nazwy pliku. Blokuje też obejścia, takie jak `# noqa` czy pomijanie testów.
 - [withastro/astro #18660](https://github.com/withastro/astro/pull/18660), scalony: wstępne ładowanie fontów zmiennych, gdy żądany zakres grubości mieści się w zakresie pliku.
 
 ## Badania
