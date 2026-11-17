@@ -3,6 +3,7 @@ import difflib
 import json
 import re
 import sys
+from datetime import datetime
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlparse
@@ -58,6 +59,13 @@ def plain(md):
 def words(text):
     return " ".join(text.split())
 
+def has_utc_offset(value):
+    """Google reads the two dates of a ProfilePage as DateTime: a bare date is reported as an invalid value."""
+    try:
+        return datetime.fromisoformat(value).tzinfo is not None
+    except (TypeError, ValueError):
+        return False
+
 def compare(path, what, page_items, text_items, show):
     """One problem line per added, removed or changed run of items, page against accepted text."""
     matcher = difflib.SequenceMatcher(None, text_items, page_items, autojunk=False)
@@ -94,6 +102,9 @@ def check_page(lang, path, url):
     people = [b.get("mainEntity", {}) for b in blocks if isinstance(b, dict) and b.get("@type") == "ProfilePage"]
     if len(people) != 1 or people[0].get("@type") != "Person" or not people[0].get("name"):
         problems.append(f"{path}: needs one ProfilePage with mainEntity Person and a name")
+    for profile in (b for b in blocks if isinstance(b, dict) and b.get("@type") == "ProfilePage"):
+        dates = ("dateCreated", "dateModified")
+        problems.extend(f"{path}: {key} needs a date, a time and a UTC offset" for key in dates if not has_utc_offset(profile.get(key)))
     return [p.get("@id") for p in people]
 
 def check_file(path):
