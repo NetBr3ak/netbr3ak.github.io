@@ -42,7 +42,7 @@
   "name": "Szymon Jędryczko (NetBr3ak), Founder & Software Engineer",
   "inLanguage": "en",
   "dateCreated": "2026-11-16T18:48:00+01:00",
-  "dateModified": "2026-11-16T18:48:00+01:00",
+  "dateModified": "2026-11-18T17:56:49+01:00",
   "mainEntity": {
     "@type": "Person",
     "@id": "https://netbr3ak.github.io/#person",
@@ -57,14 +57,61 @@
       "https://github.com/NetBr3ak",
       "https://www.linkedin.com/in/szymon-jedryczko"
     ],
-    "knowsAbout": ["Speech transcription", "Rust", "Language models", "Gated DeltaNet", "Native Sparse Attention"],
+    "knowsAbout": [
+      "Speech transcription",
+      "Rust",
+      "Language models",
+      "Gated DeltaNet",
+      "Native Sparse Attention"
+    ],
     "worksFor": {
       "@type": "Organization",
       "@id": "https://tenzanlogic.com/#organization",
       "name": "Tenzan Logic",
       "url": "https://tenzanlogic.com"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Andrzej Frycz Modrzewski Krakow University"
     }
-  }
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "BETON",
+      "codeRepository": "https://github.com/NetBr3ak/beton"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "HSPMN",
+      "codeRepository": "https://github.com/NetBr3ak/HSPMN"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "gba",
+      "codeRepository": "https://github.com/NetBr3ak/gba"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Planetary System Simulation",
+      "codeRepository": "https://github.com/NetBr3ak/Planetary-System-Simulation"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "core-chat",
+      "codeRepository": "https://github.com/NetBr3ak/core-chat"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Fruitend",
+      "codeRepository": "https://github.com/NetBr3ak/fruitend"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Cook Book Chronicles",
+      "codeRepository": "https://github.com/NetBr3ak/Cook-book-Chronicles"
+    }
+  ]
 }
 </script>
 </head>
@@ -81,7 +128,7 @@
   </div>
 
   <section>
-    <h2>Software <span>(closed source)</span></h2>
+    <h2 id="software">Software <span>(closed source)</span></h2>
     <div>
       <ul>
         <li><a href="https://tenzanlogic.com/en/">Voxmill</a>: offline transcription for Apple computers, built with Rust, whisper.cpp and Core&nbsp;ML. 7.74% word error rate on the 758&nbsp;<span class="nowrap">read-speech</span> clips of the Polish FLEURS test set (Voxmill Pro, <span class="nowrap">Whisper large-v3-turbo Q5_0</span>, normalised text, measured by Tenzan&nbsp;Logic, September 2026).</li>
@@ -91,17 +138,22 @@
   </section>
 
   <section>
-    <h2>Open source</h2>
+    <h2 id="open-source">Open source</h2>
     <div>
       <ul>
         <li><a href="https://github.com/NetBr3ak/beton">BETON</a>: a Claude&nbsp;Code plugin. After each <code>Write</code>, <code>Edit</code> or <code>MultiEdit</code>, it runs the installed linters and type checkers, and tests matched by file name. It also blocks shortcuts such as <code># noqa</code> and skipped tests.</li>
+        <li><a href="https://github.com/NetBr3ak/gba">gba</a>: A Game Boy Advance emulator in C++23 and SDL3. I test its graphics and BIOS functions with small programs written for the emulator, without distributing game ROMs.</li>
+        <li><a href="https://github.com/NetBr3ak/Planetary-System-Simulation">Planetary System Simulation</a>: A two-body gravity simulator. SciPy calculates the orbits; the tests check conservation of energy and momentum and compare the period with Kepler’s third law.</li>
+        <li><a href="https://github.com/NetBr3ak/core-chat">core-chat</a>: A chat client in Next.js with a Bun and Hono backend. Replies stream from Gemini on Vertex AI; a stand-in model lets the tests run without a cloud key.</li>
+        <li><a href="https://github.com/NetBr3ak/fruitend">Fruitend</a>: An animated page built with HTML, CSS and JavaScript. The citrus slice is drawn with gradients; the built-in inspector shows the CSS rules behind the element you point at.</li>
+        <li><a href="https://github.com/NetBr3ak/Cook-book-Chronicles">Cook Book Chronicles</a>: A recipe site that recalculates ingredients for the number of servings and runs timers beside the cooking steps. It needs no build step.</li>
         <li><a href="https://github.com/withastro/astro/pull/18660">withastro/astro #18660</a>, merged: preload variable fonts when the requested weight range is inside the file's range.</li>
       </ul>
     </div>
   </section>
 
   <section>
-    <h2>Research</h2>
+    <h2 id="research">Research</h2>
     <div>
       <p><a href="https://github.com/NetBr3ak/HSPMN">HSPMN</a> is Python research code for an unpublished manuscript on hybrid language models. It compares a learned per-token gate with a frozen random gate for routing between a Gated&nbsp;DeltaNet recurrent stream and a <span class="nowrap">Native Sparse Attention</span> stream. I trained models on <span class="nowrap">WikiText-103</span> at two scales, 140M and 350M; these are scale names, not exact parameter counts (<a href="https://github.com/NetBr3ak/HSPMN#recorded-findings">recorded findings</a>).</p>
       <p>A later audit found a bug that shifted the training targets twice, so every recorded run learned to predict the token two places ahead, not the next token. The audit also found future-token access in the predictive-coding gate and automatic NSA block selection, and an incorrect Gated&nbsp;DeltaNet CPU recurrence. Version 5.1.0 fixes these defects; I have not yet run it at training scale (<a href="https://github.com/NetBr3ak/HSPMN#reproduction-status">reproduction status</a>).</p>
@@ -110,7 +162,23 @@
   </section>
 
   <section>
-    <h2>Links</h2>
+    <h2 id="experience">Work experience</h2>
+    <div>
+      <p>I founded Tenzan Logic in March 2026. At Emitel, I moved from IT systems and application maintenance (December 2024 to April 2025) into enterprise IT systems analysis in April 2025.</p>
+      <p>I worked in financial risk at Bank Polskiej Spółdzielczości from June to October 2024. Before that, I worked freelance for Eminus Systems, first as a penetration tester (January to July 2023), then as a software engineer (July 2023 to June 2024).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="education">Education</h2>
+    <div>
+      <p>I earned an engineering degree in computer science and econometrics at Andrzej Frycz Modrzewski Krakow University in February 2025, specialising in information security. I was vice president of the university IT club and helped organise the Frycz Cyber Sektor Arena esports tournament.</p>
+      <p>I earned the Cisco Ethical Hacker certificate in November 2024. In May 2024, I wrote the shortest correct solution in the Superheroes tier of DataArt’s Proggy-Buggy programming contest.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="links">Links</h2>
     <div>
       <ul>
         <li><a href="https://github.com/NetBr3ak">GitHub</a></li>

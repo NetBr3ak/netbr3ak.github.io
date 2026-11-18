@@ -42,7 +42,7 @@
   "name": "Szymon Jędryczko, założyciel i inżynier oprogramowania",
   "inLanguage": "pl",
   "dateCreated": "2026-11-16T18:48:00+01:00",
-  "dateModified": "2026-11-16T18:48:00+01:00",
+  "dateModified": "2026-11-18T17:56:49+01:00",
   "mainEntity": {
     "@type": "Person",
     "@id": "https://netbr3ak.github.io/#person",
@@ -57,14 +57,61 @@
       "https://github.com/NetBr3ak",
       "https://www.linkedin.com/in/szymon-jedryczko"
     ],
-    "knowsAbout": ["Transkrypcja mowy", "Rust", "Modele językowe", "Gated DeltaNet", "Native Sparse Attention"],
+    "knowsAbout": [
+      "Transkrypcja mowy",
+      "Rust",
+      "Modele językowe",
+      "Gated DeltaNet",
+      "Native Sparse Attention"
+    ],
     "worksFor": {
       "@type": "Organization",
       "@id": "https://tenzanlogic.com/#organization",
       "name": "Tenzan Logic",
       "url": "https://tenzanlogic.com"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Uniwersytet Andrzeja Frycza Modrzewskiego w Krakowie"
     }
-  }
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "BETON",
+      "codeRepository": "https://github.com/NetBr3ak/beton"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "HSPMN",
+      "codeRepository": "https://github.com/NetBr3ak/HSPMN"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "gba",
+      "codeRepository": "https://github.com/NetBr3ak/gba"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Planetary System Simulation",
+      "codeRepository": "https://github.com/NetBr3ak/Planetary-System-Simulation"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "core-chat",
+      "codeRepository": "https://github.com/NetBr3ak/core-chat"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Fruitend",
+      "codeRepository": "https://github.com/NetBr3ak/fruitend"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Cook Book Chronicles",
+      "codeRepository": "https://github.com/NetBr3ak/Cook-book-Chronicles"
+    }
+  ]
 }
 </script>
 </head>
@@ -81,7 +128,7 @@
   </div>
 
   <section>
-    <h2>Oprogramowanie <span>(kod zamknięty)</span></h2>
+    <h2 id="software">Oprogramowanie <span>(kod zamknięty)</span></h2>
     <div>
       <ul>
         <li><a href="https://tenzanlogic.com/">Voxmill</a>: transkrypcja offline na komputerach Apple. Technologie: Rust, whisper.cpp i&nbsp;Core&nbsp;ML. Współczynnik błędów słów (WER) wynosi 7,74% na 758&nbsp;nagraniach mowy czytanej z&nbsp;polskiego zbioru testowego FLEURS (Voxmill Pro, <span class="nowrap">Whisper large-v3-turbo Q5_0</span>, tekst znormalizowany, pomiar Tenzan&nbsp;Logic, wrzesień 2026).</li>
@@ -91,17 +138,22 @@
   </section>
 
   <section>
-    <h2>Otwarty kod</h2>
+    <h2 id="open-source">Otwarty kod</h2>
     <div>
       <ul>
         <li><a href="https://github.com/NetBr3ak/beton">BETON</a>: wtyczka do Claude&nbsp;Code. Po każdym wywołaniu <code>Write</code>, <code>Edit</code> lub <code>MultiEdit</code> uruchamia zainstalowane lintery, sprawdzanie typów i&nbsp;testy dobrane według nazwy pliku. Blokuje też obejścia, takie jak <code># noqa</code> czy pomijanie testów.</li>
+        <li><a href="https://github.com/NetBr3ak/gba">gba</a>: Emulator Game Boy Advance napisany w C++23 i SDL3. Grafikę i funkcje BIOS-u sprawdzam na małych programach napisanych dla emulatora, bez rozpowszechniania plików gier.</li>
+        <li><a href="https://github.com/NetBr3ak/Planetary-System-Simulation">Planetary System Simulation</a>: Symulator dwóch ciał przyciągających się grawitacyjnie. SciPy wylicza orbity. Testy sprawdzają zachowanie energii i pędu oraz porównują okres obiegu z trzecim prawem Keplera.</li>
+        <li><a href="https://github.com/NetBr3ak/core-chat">core-chat</a>: Klient czatu w Next.js z serwerem w Bun i Hono. Odpowiedzi z Gemini w Vertex AI trafiają na ekran w trakcie generowania. W testach model zastępczy pozwala sprawdzić ten sam przepływ bez klucza do chmury.</li>
+        <li><a href="https://github.com/NetBr3ak/fruitend">Fruitend</a>: Animowana strona napisana w HTML, CSS i JavaScript. Plaster cytrusa tworzą gradienty. Wbudowany inspektor pokazuje reguły CSS wskazanego elementu.</li>
+        <li><a href="https://github.com/NetBr3ak/Cook-book-Chronicles">Cook Book Chronicles</a>: Strona z przepisami, która przelicza składniki na wybraną liczbę porcji i uruchamia minutniki przy krokach gotowania. Nie wymaga procesu budowania.</li>
         <li><a href="https://github.com/withastro/astro/pull/18660">withastro/astro #18660</a>, scalony: wstępne ładowanie fontów zmiennych, gdy żądany zakres grubości mieści się w&nbsp;zakresie pliku.</li>
       </ul>
     </div>
   </section>
 
   <section>
-    <h2>Badania</h2>
+    <h2 id="research">Badania</h2>
     <div>
       <p><a href="https://github.com/NetBr3ak/HSPMN">HSPMN</a> to kod badawczy w&nbsp;języku Python do nieopublikowanego artykułu o&nbsp;hybrydowych modelach językowych. Sprawdzam w&nbsp;nim routing między rekurencyjnym strumieniem Gated&nbsp;DeltaNet a&nbsp;strumieniem <span class="nowrap">Native Sparse Attention</span>. Porównuję wyuczoną bramkę decydującą osobno o&nbsp;każdym tokenie z&nbsp;zamrożoną bramką losową. Modele trenowałem na <span class="nowrap">WikiText-103</span> w&nbsp;dwóch skalach nazwanych 140M i&nbsp;350M. To nazwy skal, a&nbsp;nie dokładne liczby parametrów (<a href="https://github.com/NetBr3ak/HSPMN#recorded-findings">zapisane wyniki</a>).</p>
       <p>Późniejszy audyt wykazał błąd, który dwa razy przesuwał etykiety treningowe. Każdy zapisany przebieg uczył się więc przewidywać token o&nbsp;dwie pozycje dalej, a&nbsp;nie następny. Audyt wykazał też dostęp do przyszłych tokenów w&nbsp;bramce z&nbsp;kodowaniem predykcyjnym i&nbsp;w&nbsp;automatycznym wyborze bloków NSA oraz błędną rekurencję Gated&nbsp;DeltaNet na CPU. Wersja 5.1.0 poprawia te błędy, ale nie uruchomiłem jej jeszcze w&nbsp;pełnym treningu (<a href="https://github.com/NetBr3ak/HSPMN#reproduction-status">stan odtwarzalności</a>).</p>
@@ -110,7 +162,23 @@
   </section>
 
   <section>
-    <h2>Linki</h2>
+    <h2 id="experience">Doświadczenie zawodowe</h2>
+    <div>
+      <p>W marcu 2026 roku założyłem Tenzan Logic. W Emitelu zajmowałem się utrzymaniem systemów i aplikacji IT od grudnia 2024 do kwietnia 2025 roku. W kwietniu 2025 przeszedłem do analizy systemów IT.</p>
+      <p>Od czerwca do października 2024 roku pracowałem w obszarze ryzyka finansowego w Banku Polskiej Spółdzielczości. Wcześniej współpracowałem z Eminus Systems: od stycznia do lipca 2023 jako tester bezpieczeństwa, a od lipca 2023 do czerwca 2024 jako inżynier oprogramowania.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="education">Wykształcenie</h2>
+    <div>
+      <p>W lutym 2025 roku ukończyłem studia inżynierskie z informatyki i ekonometrii na Uniwersytecie Andrzeja Frycza Modrzewskiego w Krakowie, ze specjalnością bezpieczeństwo informacji. Byłem wiceprezesem uczelnianego koła informatycznego i współorganizowałem turniej e-sportowy Frycz Cyber Sektor Arena.</p>
+      <p>W listopadzie 2024 roku zdobyłem certyfikat Cisco Ethical Hacker. W maju 2024 napisałem najkrótsze poprawne rozwiązanie w kategorii Superheroes w konkursie programistycznym Proggy-Buggy organizowanym przez DataArt.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="links">Linki</h2>
     <div>
       <ul>
         <li><a href="https://github.com/NetBr3ak">GitHub</a></li>

@@ -14,6 +14,11 @@ I build offline speech software for Apple computers and run [language-model expe
 ## Open source
 
 - [BETON](https://github.com/NetBr3ak/beton): a Claude Code plugin. After each `Write`, `Edit` or `MultiEdit`, it runs the installed linters and type checkers, and tests matched by file name. It also blocks shortcuts such as `# noqa` and skipped tests.
+- [gba](https://github.com/NetBr3ak/gba): A Game Boy Advance emulator in C++23 and SDL3. I test its graphics and BIOS functions with small programs written for the emulator, without distributing game ROMs.
+- [Planetary System Simulation](https://github.com/NetBr3ak/Planetary-System-Simulation): A two-body gravity simulator. SciPy calculates the orbits; the tests check conservation of energy and momentum and compare the period with Kepler’s third law.
+- [core-chat](https://github.com/NetBr3ak/core-chat): A chat client in Next.js with a Bun and Hono backend. Replies stream from Gemini on Vertex AI; a stand-in model lets the tests run without a cloud key.
+- [Fruitend](https://github.com/NetBr3ak/fruitend): An animated page built with HTML, CSS and JavaScript. The citrus slice is drawn with gradients; the built-in inspector shows the CSS rules behind the element you point at.
+- [Cook Book Chronicles](https://github.com/NetBr3ak/Cook-book-Chronicles): A recipe site that recalculates ingredients for the number of servings and runs timers beside the cooking steps. It needs no build step.
 - [withastro/astro #18660](https://github.com/withastro/astro/pull/18660), merged: preload variable fonts when the requested weight range is inside the file's range.
 
 ## Research
@@ -23,6 +28,18 @@ I build offline speech software for Apple computers and run [language-model expe
 A later audit found a bug that shifted the training targets twice, so every recorded run learned to predict the token two places ahead, not the next token. The audit also found future-token access in the predictive-coding gate and automatic NSA block selection, and an incorrect Gated DeltaNet CPU recurrence. Version 5.1.0 fixes these defects; I have not yet run it at training scale ([reproduction status](https://github.com/NetBr3ak/HSPMN#reproduction-status)).
 
 [Manuscript source (LaTeX)](https://github.com/NetBr3ak/HSPMN/blob/main/paper/HSPMN_v5_draft.tex), written before the audit.
+
+## Work experience
+
+I founded Tenzan Logic in March 2026. At Emitel, I moved from IT systems and application maintenance (December 2024 to April 2025) into enterprise IT systems analysis in April 2025.
+
+I worked in financial risk at Bank Polskiej Spółdzielczości from June to October 2024. Before that, I worked freelance for Eminus Systems, first as a penetration tester (January to July 2023), then as a software engineer (July 2023 to June 2024).
+
+## Education
+
+I earned an engineering degree in computer science and econometrics at Andrzej Frycz Modrzewski Krakow University in February 2025, specialising in information security. I was vice president of the university IT club and helped organise the Frycz Cyber Sektor Arena esports tournament.
+
+I earned the Cisco Ethical Hacker certificate in November 2024. In May 2024, I wrote the shortest correct solution in the Superheroes tier of DataArt’s Proggy-Buggy programming contest.
 
 ## Links
 
