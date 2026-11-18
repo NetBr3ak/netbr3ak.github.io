@@ -14,6 +14,7 @@ Piszę oprogramowanie do transkrypcji mowy offline na komputery Apple i prowadz�
 ## Otwarty kod
 
 - [BETON](https://github.com/NetBr3ak/beton): wtyczka do Claude Code. Po każdym wywołaniu `Write`, `Edit` lub `MultiEdit` uruchamia zainstalowane lintery, sprawdzanie typów i testy dobrane według nazwy pliku. Blokuje też obejścia, takie jak `# noqa` czy pomijanie testów.
+- [HDFour](https://github.com/NetBr3ak/hdfour): Czytnik plików HDF4 i HDF-EOS2 napisany w języku Rust. Te same dane można odczytać z Pythona lub w przeglądarce przez WebAssembly. Wyniki porównuję z odczytem referencyjnej biblioteki HDF4 w C.
 - [gba](https://github.com/NetBr3ak/gba): Emulator Game Boy Advance napisany w C++23 i SDL3. Grafikę i funkcje BIOS-u sprawdzam na małych programach napisanych dla emulatora, bez rozpowszechniania plików gier.
 - [Planetary System Simulation](https://github.com/NetBr3ak/Planetary-System-Simulation): Symulator dwóch ciał przyciągających się grawitacyjnie. SciPy wylicza orbity. Testy sprawdzają zachowanie energii i pędu oraz porównują okres obiegu z trzecim prawem Keplera.
 - [core-chat](https://github.com/NetBr3ak/core-chat): Klient czatu w Next.js z serwerem w Bun i Hono. Odpowiedzi z Gemini w Vertex AI trafiają na ekran w trakcie generowania. W testach model zastępczy pozwala sprawdzić ten sam przepływ bez klucza do chmury.
