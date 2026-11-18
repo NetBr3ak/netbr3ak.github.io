@@ -106,7 +106,7 @@ function getLineLengths(page, selector) {
   }
 
   // Browser default font size at 200% (32 px), as a reader would set it.
-  for (const [width, height] of [[1280, 800], [375, 812]]) {
+  for (const [width, height] of [[1280, 800], [375, 812], [320, 640]]) {
     for (const [lang, path] of Object.entries(PAGES)) {
       const label = `${lang}-${width}-light-font200`;
       const { context, page } = await open(browser, path, { width, height });
@@ -118,6 +118,14 @@ function getLineLengths(page, selector) {
       await page.reload();
       const enlarged = await getHeadingSize();
       if (Math.abs(enlarged - 2 * normal) > 0.1) problems.push(`${label}: heading grew from ${normal} to ${enlarged}px, expected double`);
+      const surnameLines = await heading.evaluate(el => {
+        const text = el.firstChild;
+        const range = document.createRange();
+        range.setStart(text, text.textContent.lastIndexOf(' ') + 1);
+        range.setEnd(text, text.length);
+        return range.getClientRects().length;
+      });
+      if (surnameLines !== 1) problems.push(`${label}: surname split across ${surnameLines} lines`);
       await checkOverflow(page, label);
       if (lang === 'en') await page.screenshot({ path: `${OUT}/${label}-0.png` });
       await context.close();
