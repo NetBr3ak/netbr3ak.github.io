@@ -110,9 +110,14 @@ function getLineLengths(page, selector) {
     for (const [lang, path] of Object.entries(PAGES)) {
       const label = `${lang}-${width}-light-font200`;
       const { context, page } = await open(browser, path, { width, height });
+      const heading = page.locator('h1');
+      const getHeadingSize = () => heading.evaluate(el => parseFloat(getComputedStyle(el).fontSize));
+      const normal = await getHeadingSize();
       const cdp = await context.newCDPSession(page);
       await cdp.send('Page.setFontSizes', { fontSizes: { standard: 32, fixed: 26 } });
       await page.reload();
+      const enlarged = await getHeadingSize();
+      if (Math.abs(enlarged - 2 * normal) > 0.1) problems.push(`${label}: heading grew from ${normal} to ${enlarged}px, expected double`);
       await checkOverflow(page, label);
       if (lang === 'en') await page.screenshot({ path: `${OUT}/${label}-0.png` });
       await context.close();
