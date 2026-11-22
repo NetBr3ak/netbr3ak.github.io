@@ -4,7 +4,7 @@ Założyciel i inżynier oprogramowania
 
 Kod publikuję na GitHubie jako [NetBr3ak](https://github.com/NetBr3ak).
 
-Piszę oprogramowanie do transkrypcji mowy offline na komputery Apple i prowadzę [eksperymenty z modelami językowymi](https://github.com/NetBr3ak/HSPMN) na jednej karcie graficznej. Założyłem Tenzan Logic, gdzie powstają Voxmill i Helio.
+Piszę oprogramowanie do transkrypcji mowy offline na komputery Apple i prowadzę [eksperymenty z modelami językowymi](https://github.com/NetBr3ak/hspmn) na jednej karcie graficznej. Założyłem Tenzan Logic, gdzie powstają Voxmill i Helio.
 
 ## Oprogramowanie (kod zamknięty)
 
@@ -15,20 +15,17 @@ Piszę oprogramowanie do transkrypcji mowy offline na komputery Apple i prowadz�
 
 - [BETON](https://github.com/NetBr3ak/beton): wtyczka do Claude Code. Po każdym wywołaniu `Write`, `Edit` lub `MultiEdit` uruchamia zainstalowane lintery, sprawdzanie typów i testy dobrane według nazwy pliku. Blokuje też obejścia, takie jak `# noqa` czy pomijanie testów.
 - [HDFour](https://github.com/NetBr3ak/hdfour): Czytnik plików HDF4 i HDF-EOS2 napisany w języku Rust. Te same dane można odczytać z Pythona lub w przeglądarce przez WebAssembly. Wyniki porównuję z odczytem referencyjnej biblioteki HDF4 w C.
-- [gba](https://github.com/NetBr3ak/gba): Emulator Game Boy Advance napisany w C++23 i SDL3. Grafikę i funkcje BIOS-u sprawdzam na małych programach napisanych dla emulatora, bez rozpowszechniania plików gier.
-- [Planetary System Simulation](https://github.com/NetBr3ak/Planetary-System-Simulation): Symulator dwóch ciał przyciągających się grawitacyjnie. SciPy wylicza orbity. Testy sprawdzają zachowanie energii i pędu oraz porównują okres obiegu z trzecim prawem Keplera.
-- [core-chat](https://github.com/NetBr3ak/core-chat): Klient czatu w Next.js z serwerem w Bun i Hono. Odpowiedzi z Gemini w Vertex AI trafiają na ekran w trakcie generowania. W testach model zastępczy pozwala sprawdzić ten sam przepływ bez klucza do chmury.
 - [Fruitend](https://github.com/NetBr3ak/fruitend): Animowana strona napisana w HTML, CSS i JavaScript. Plaster cytrusa tworzą gradienty. Wbudowany inspektor pokazuje reguły CSS wskazanego elementu.
 - [Cook Book Chronicles](https://github.com/NetBr3ak/Cook-book-Chronicles): Strona z przepisami, która przelicza składniki na wybraną liczbę porcji i uruchamia minutniki przy krokach gotowania. Nie wymaga procesu budowania.
 - [withastro/astro #18660](https://github.com/withastro/astro/pull/18660), scalony: wstępne ładowanie fontów zmiennych, gdy żądany zakres grubości mieści się w zakresie pliku.
 
 ## Badania
 
-[HSPMN](https://github.com/NetBr3ak/HSPMN) to kod badawczy w języku Python do nieopublikowanego artykułu o hybrydowych modelach językowych. Sprawdzam w nim routing między rekurencyjnym strumieniem Gated DeltaNet a strumieniem Native Sparse Attention. Porównuję wyuczoną bramkę decydującą osobno o każdym tokenie z zamrożoną bramką losową. Modele trenowałem na WikiText-103 w dwóch skalach nazwanych 140M i 350M. To nazwy skal, a nie dokładne liczby parametrów ([zapisane wyniki](https://github.com/NetBr3ak/HSPMN#recorded-findings)).
+[HSPMN](https://github.com/NetBr3ak/hspmn) to kod badawczy w języku Python do nieopublikowanego artykułu o hybrydowych modelach językowych. Sprawdzam w nim routing między rekurencyjnym strumieniem Gated DeltaNet a strumieniem Native Sparse Attention. Porównuję wyuczoną bramkę decydującą osobno o każdym tokenie z zamrożoną bramką losową. Modele trenowałem na WikiText-103 w dwóch skalach nazwanych 140M i 350M. To nazwy skal, a nie dokładne liczby parametrów ([zapisane wyniki](https://github.com/NetBr3ak/hspmn#recorded-findings)).
 
-Późniejszy audyt wykazał błąd, który dwa razy przesuwał etykiety treningowe. Każdy zapisany przebieg uczył się więc przewidywać token o dwie pozycje dalej, a nie następny. Audyt wykazał też dostęp do przyszłych tokenów w bramce z kodowaniem predykcyjnym i w automatycznym wyborze bloków NSA oraz błędną rekurencję Gated DeltaNet na CPU. Wersja 5.1.0 poprawia te błędy, ale nie uruchomiłem jej jeszcze w pełnym treningu ([stan odtwarzalności](https://github.com/NetBr3ak/HSPMN#reproduction-status)).
+Późniejszy audyt wykazał błąd, który dwa razy przesuwał etykiety treningowe. Każdy zapisany przebieg uczył się więc przewidywać token o dwie pozycje dalej, a nie następny. Audyt wykazał też dostęp do przyszłych tokenów w bramce z kodowaniem predykcyjnym i w automatycznym wyborze bloków NSA oraz błędną rekurencję Gated DeltaNet na CPU. Wersja 5.1.0 poprawia te błędy, ale nie uruchomiłem jej jeszcze w pełnym treningu ([stan odtwarzalności](https://github.com/NetBr3ak/hspmn#reproduction-status)).
 
-[Źródło artykułu (LaTeX)](https://github.com/NetBr3ak/HSPMN/blob/main/paper/HSPMN_v5_draft.tex), napisanego przed audytem.
+[Źródło artykułu (LaTeX)](https://github.com/NetBr3ak/hspmn/blob/main/paper/HSPMN_v5_draft.tex), napisanego przed audytem.
 
 ## Doświadczenie zawodowe
 

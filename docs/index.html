@@ -84,27 +84,12 @@
     {
       "@type": "SoftwareSourceCode",
       "name": "HSPMN",
-      "codeRepository": "https://github.com/NetBr3ak/HSPMN"
+      "codeRepository": "https://github.com/NetBr3ak/hspmn"
     },
     {
       "@type": "SoftwareSourceCode",
       "name": "HDFour",
       "codeRepository": "https://github.com/NetBr3ak/hdfour"
-    },
-    {
-      "@type": "SoftwareSourceCode",
-      "name": "gba",
-      "codeRepository": "https://github.com/NetBr3ak/gba"
-    },
-    {
-      "@type": "SoftwareSourceCode",
-      "name": "Planetary System Simulation",
-      "codeRepository": "https://github.com/NetBr3ak/Planetary-System-Simulation"
-    },
-    {
-      "@type": "SoftwareSourceCode",
-      "name": "core-chat",
-      "codeRepository": "https://github.com/NetBr3ak/core-chat"
     },
     {
       "@type": "SoftwareSourceCode",
@@ -129,7 +114,7 @@
 <main>
   <div class="intro">
     <p>I publish code on GitHub as <a class="handle" href="https://github.com/NetBr3ak">NetBr3ak</a>.</p>
-    <p>I build offline speech software for Apple computers and run <a href="https://github.com/NetBr3ak/HSPMN">language-model experiments</a> on one GPU. I founded Tenzan&nbsp;Logic, which makes Voxmill and Helio.</p>
+    <p>I build offline speech software for Apple computers and run <a href="https://github.com/NetBr3ak/hspmn">language-model experiments</a> on one GPU. I founded Tenzan&nbsp;Logic, which makes Voxmill and Helio.</p>
   </div>
 
   <section>
@@ -148,9 +133,6 @@
       <ul>
         <li><a href="https://github.com/NetBr3ak/beton">BETON</a>: a Claude&nbsp;Code plugin. After each <code>Write</code>, <code>Edit</code> or <code>MultiEdit</code>, it runs the installed linters and type checkers, and tests matched by file name. It also blocks shortcuts such as <code># noqa</code> and skipped tests.</li>
         <li><a href="https://github.com/NetBr3ak/hdfour">HDFour</a>: A Rust library for reading HDF4 and HDF-EOS2 files, with Python and WebAssembly bindings. I check its output against the reference HDF4 C library.</li>
-        <li><a href="https://github.com/NetBr3ak/gba">gba</a>: A Game Boy Advance emulator in C++23 and SDL3. I test its graphics and BIOS functions with small programs written for the emulator, without distributing game ROMs.</li>
-        <li><a href="https://github.com/NetBr3ak/Planetary-System-Simulation">Planetary System Simulation</a>: A two-body gravity simulator. SciPy calculates the orbits; the tests check conservation of energy and momentum and compare the period with Kepler’s third law.</li>
-        <li><a href="https://github.com/NetBr3ak/core-chat">core-chat</a>: A chat client in Next.js with a Bun and Hono backend. Replies stream from Gemini on Vertex AI; a stand-in model lets the tests run without a cloud key.</li>
         <li><a href="https://github.com/NetBr3ak/fruitend">Fruitend</a>: An animated page built with HTML, CSS and JavaScript. The citrus slice is drawn with gradients; the built-in inspector shows the CSS rules behind the element you point at.</li>
         <li><a href="https://github.com/NetBr3ak/Cook-book-Chronicles">Cook Book Chronicles</a>: A recipe site that recalculates ingredients for the number of servings and runs timers beside the cooking steps. It needs no build step.</li>
         <li><a href="https://github.com/withastro/astro/pull/18660">withastro/astro #18660</a>, merged: preload variable fonts when the requested weight range is inside the file's range.</li>
@@ -161,9 +143,9 @@
   <section>
     <h2 id="research">Research</h2>
     <div>
-      <p><a href="https://github.com/NetBr3ak/HSPMN">HSPMN</a> is Python research code for an unpublished manuscript on hybrid language models. It compares a learned per-token gate with a frozen random gate for routing between a Gated&nbsp;DeltaNet recurrent stream and a <span class="nowrap">Native Sparse Attention</span> stream. I trained models on <span class="nowrap">WikiText-103</span> at two scales, 140M and 350M; these are scale names, not exact parameter counts (<a href="https://github.com/NetBr3ak/HSPMN#recorded-findings">recorded findings</a>).</p>
-      <p>A later audit found a bug that shifted the training targets twice, so every recorded run learned to predict the token two places ahead, not the next token. The audit also found future-token access in the predictive-coding gate and automatic NSA block selection, and an incorrect Gated&nbsp;DeltaNet CPU recurrence. Version 5.1.0 fixes these defects; I have not yet run it at training scale (<a href="https://github.com/NetBr3ak/HSPMN#reproduction-status">reproduction status</a>).</p>
-      <p><a href="https://github.com/NetBr3ak/HSPMN/blob/main/paper/HSPMN_v5_draft.tex">Manuscript source (LaTeX)</a>, written before the audit.</p>
+      <p><a href="https://github.com/NetBr3ak/hspmn">HSPMN</a> is Python research code for an unpublished manuscript on hybrid language models. It compares a learned per-token gate with a frozen random gate for routing between a Gated&nbsp;DeltaNet recurrent stream and a <span class="nowrap">Native Sparse Attention</span> stream. I trained models on <span class="nowrap">WikiText-103</span> at two scales, 140M and 350M; these are scale names, not exact parameter counts (<a href="https://github.com/NetBr3ak/hspmn#recorded-findings">recorded findings</a>).</p>
+      <p>A later audit found a bug that shifted the training targets twice, so every recorded run learned to predict the token two places ahead, not the next token. The audit also found future-token access in the predictive-coding gate and automatic NSA block selection, and an incorrect Gated&nbsp;DeltaNet CPU recurrence. Version 5.1.0 fixes these defects; I have not yet run it at training scale (<a href="https://github.com/NetBr3ak/hspmn#reproduction-status">reproduction status</a>).</p>
+      <p><a href="https://github.com/NetBr3ak/hspmn/blob/main/paper/HSPMN_v5_draft.tex">Manuscript source (LaTeX)</a>, written before the audit.</p>
     </div>
   </section>
 
