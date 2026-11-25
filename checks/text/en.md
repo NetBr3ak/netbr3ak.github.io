@@ -1,46 +1,77 @@
+Skip to content
 # Szymon Jędryczko
-
-Founder & Software Engineer
-
-I publish code on GitHub as [NetBr3ak](https://github.com/NetBr3ak).
-
-I build offline speech software for Apple computers and run [language-model experiments](https://github.com/NetBr3ak/hspmn) on one GPU. I founded Tenzan Logic, which makes Voxmill and Helio.
-
-## Software (closed source)
-
-- [Voxmill](https://tenzanlogic.com/en/): offline transcription for Apple computers, built with Rust, whisper.cpp and Core ML. 7.74% word error rate on the 758 read-speech clips of the Polish FLEURS test set (Voxmill Pro, Whisper large-v3-turbo Q5_0, normalised text, measured by Tenzan Logic, September 2026).
-- [Helio](https://tenzanlogic.com/helio/en/): a demo that analyses solar farms from the inverter data they already log.
-
-## Open source
-
-- [BETON](https://github.com/NetBr3ak/beton): a Claude Code plugin. After each `Write`, `Edit` or `MultiEdit`, it runs the installed linters and type checkers, and tests matched by file name. It also blocks shortcuts such as `# noqa` and skipped tests.
-- [HDFour](https://github.com/NetBr3ak/hdfour): A Rust library for reading HDF4 and HDF-EOS2 files, with Python and WebAssembly bindings. I check its output against the reference HDF4 C library.
-- [Fruitend](https://github.com/NetBr3ak/fruitend): An animated page built with HTML, CSS and JavaScript. The citrus slice is drawn with gradients; the built-in inspector shows the CSS rules behind the element you point at.
-- [Cook Book Chronicles](https://github.com/NetBr3ak/Cook-book-Chronicles): A recipe site that recalculates ingredients for the number of servings and runs timers beside the cooking steps. It needs no build step.
-- [withastro/astro #18660](https://github.com/withastro/astro/pull/18660), merged: preload variable fonts when the requested weight range is inside the file's range.
+Enterprise IT System Analyst at Emitel S.A.
+I deploy language models and build tools for document search.
+I run the company AI chat in production. I have worked in IT since 2023. I started in penetration testing before building backend services.
+- [LinkedIn](https://www.linkedin.com/in/szymon-jedryczko)
+- [Email](mailto:szymonjedryczko1@gmail.com)
+- [GitHub](https://github.com/NetBr3ak)
+## Experience
+### Enterprise IT System Analyst
+Emitel S.A.
+since April 2025
+- I deploy applications that use language models. I built the company AI chat in Open WebUI and run it in Docker. Before each update, I test whether I can roll it back.
+- On one RTX 5090, I increased Qwen3.8-27B generation speed from 63–75 to 97–122 tokens per second. I used speculative decoding in llama.cpp and chose settings by measuring speed and GPU memory use.
+- I built document search for AI assistants. It combines vector search and BM25 in Qdrant. When I found that 74.6% of the measured passages exceeded the 512-token limit, I switched to splitting text by model tokens.
+- I ported some MCP servers from Python to Rust. In a test, all 97 reference responses matched byte for byte.
+### Mid-Level IT Systems and Applications Maintenance Specialist
+Emitel S.A.
+January to April 2025
+- I maintained Internet of Things (IoT) infrastructure and LoRaWAN networks.
+- I tuned RabbitMQ clusters and built pipelines for logs and metrics using ELK and Grafana.
+### Financial Risk Specialist
+Bank Polskiej Spółdzielczości S.A.
+June to October 2024
+- I wrote VBA scripts to process data. In Excel, I built revenue forecasts and KPI dashboards.
+### Software Engineer
+Eminus Systems
+July 2023 to June 2024 · Freelance
+- I built backend services and added security checks and static analysis to CI/CD.
+### Penetration Tester
+Eminus Systems
+January to July 2023 · Freelance
+- I tested the security of web applications, APIs and infrastructure.
+- I reviewed code for security issues and used the OWASP Top 10 in dynamic tests.
 
 ## Research
+### HSPMN: hybrid language models, 2026
+I wrote a draft paper on models that combine the Mamba architecture with attention. The draft has not been peer reviewed.
+I trained the models on one RTX 5090 using PyTorch and Triton kernels. When I checked my results, I found a bug in the training targets. I fixed it in version 5.1.0. The training runs still need to be repeated.
+Correction: I retracted the claimed 3.32x speedup. In a repeat measurement, the model reached 0.95x the speed of the compiled dense model.
+[HSPMN on GitHub](https://github.com/NetBr3ak/hspmn)
 
-[HSPMN](https://github.com/NetBr3ak/hspmn) is Python research code for an unpublished manuscript on hybrid language models. It compares a learned per-token gate with a frozen random gate for routing between a Gated DeltaNet recurrent stream and a Native Sparse Attention stream. I trained models on WikiText-103 at two scales, 140M and 350M; these are scale names, not exact parameter counts ([recorded findings](https://github.com/NetBr3ak/hspmn#recorded-findings)).
-
-A later audit found a bug that shifted the training targets twice, so every recorded run learned to predict the token two places ahead, not the next token. The audit also found future-token access in the predictive-coding gate and automatic NSA block selection, and an incorrect Gated DeltaNet CPU recurrence. Version 5.1.0 fixes these defects; I have not yet run it at training scale ([reproduction status](https://github.com/NetBr3ak/hspmn#reproduction-status)).
-
-[Manuscript source (LaTeX)](https://github.com/NetBr3ak/hspmn/blob/main/paper/HSPMN_v5_draft.tex), written before the audit.
-
-## Work experience
-
-I founded Tenzan Logic in March 2026. At Emitel, I moved from IT systems and application maintenance (December 2024 to April 2025) into enterprise IT systems analysis in April 2025.
-
-I worked in financial risk at Bank Polskiej Spółdzielczości from June to October 2024. Before that, I worked freelance for Eminus Systems, first as a penetration tester (January to July 2023), then as a software engineer (July 2023 to June 2024).
+## After hours
+I work on personal projects under the Tenzan Logic name in the evenings and on weekends. My day job comes first.
+### Voxmill: offline transcription on Apple computers
+App
+I wrote the app in Rust and TypeScript using Tauri 2 and whisper.cpp. It turns speech into text without an internet connection.
+Distribution
+I sign the code and updates. The app goes through Apple notarisation.
+Measurement
+In my September 2026 test on FLEURS, the word error rate (WER) was 7.7% on 758 Polish recordings and 6.7% on 647 English recordings.
+Availability
+I released the app in September 2026. It is free from version 0.4.0 and does not require a key.
+[Voxmill on tenzanlogic.com](https://tenzanlogic.com/en/voxmill/)
+### Other projects and open source contributions
+- Helio
+  I built a demo that analyses solar farm inverter data.
+- [BETON](https://github.com/NetBr3ak/beton) · 2026
+  I wrote a Claude Code plugin. After a file changes, it runs linters, type checks and the affected tests. It also blocks skipped tests.
+- [hdfour](https://github.com/NetBr3ak/hdfour) · 2026
+  I wrote a Rust reader for HDF4 and HDF-EOS2 files, with Python and WebAssembly bindings. In tests, I compare the values it reads with those from the HDF4 C library.
+- [Astro](https://github.com/withastro/astro/pull/18660) · 2026
+  My change to Astro was merged. It preloads variable fonts when the file covers the full requested weight range.
 
 ## Education
+- I started a part-time master’s programme in International Management at Krakow University of Economics in October 2026.
+- I graduated in Computer Science and Econometrics from Andrzej Frycz Modrzewski Krakow University in February 2025. I earned an engineering degree with a specialisation in information security.
+- I earned the Cisco Ethical Hacker certificate in November 2024.
+- I wrote the shortest correct solution in the Superheroes tier of DataArt’s Proggy-Buggy contest.
+- Polish is my first language. I rate my English at C1.
 
-I earned an engineering degree in computer science and econometrics at Andrzej Frycz Modrzewski Krakow University in February 2025, specialising in information security. I was vice president of the university IT club and helped organise the Frycz Cyber Sektor Arena esports tournament.
-
-I earned the Cisco Ethical Hacker certificate in November 2024. In May 2024, I wrote the shortest correct solution in the Superheroes tier of DataArt’s Proggy-Buggy programming contest.
-
-## Links
-
-- [GitHub](https://github.com/NetBr3ak)
+## Contact
+Write to me on LinkedIn or by email.
+[szymonjedryczko1@gmail.com](mailto:szymonjedryczko1@gmail.com)
 - [LinkedIn](https://www.linkedin.com/in/szymon-jedryczko)
-- [Tenzan Logic](https://tenzanlogic.com/en/)
+- [GitHub](https://github.com/NetBr3ak)
+[Professional portfolio](https://szymonjedryczko.vercel.app/en)
