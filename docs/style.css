@@ -9,11 +9,10 @@
   --link: oklch(0.45 0.15 258);
   /* 4.6:1 to the paper: the underline is the cue that does not depend on colour. */
   --link-line: oklch(0.55 0.1 258);
-  --code-ground: oklch(0.935 0.008 255);
+  --rule: oklch(0.88 0.012 255);
   --leading: 1.55;
 
   --sans: "Helvetica Neue", "Nimbus Sans", FreeSans, Helvetica, Arial, sans-serif;
-  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
   /* Type scale: ratio 1.25 from the 18 px body. */
   --step-0: 1.125rem;
@@ -32,7 +31,7 @@
     --muted: oklch(0.74 0.012 250);
     --link: oklch(0.8 0.1 245);
     --link-line: oklch(0.8 0.1 245 / 0.6);
-    --code-ground: oklch(0.285 0.014 255);
+    --rule: oklch(0.37 0.014 255);
     /* Light type on a dark ground reads thinner; it needs a little more air. */
     --leading: 1.6;
   }
@@ -66,9 +65,27 @@ main {
 
 h1,
 h2,
+h3,
 p,
-ul {
+ul,
+dl,
+dd {
   margin: 0;
+}
+
+.skip {
+  position: absolute;
+  inset: 0 auto auto min(1.25rem, 4vw);
+  padding-inline: 0.75rem;
+  translate: 0 -100%;
+}
+
+.skip:focus {
+  translate: 0;
+}
+
+main:focus {
+  outline: none;
 }
 
 nav {
@@ -78,8 +95,23 @@ nav {
 }
 
 nav a {
-  padding: 0.5rem;
+  padding-inline: 0.5rem;
   margin-inline-end: max(-0.5rem, -4vw);
+}
+
+.skip,
+nav a,
+.text-link,
+.actions a {
+  display: inline-flex;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.text-link {
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 h1 {
@@ -119,21 +151,64 @@ h1 {
 }
 
 .intro {
-  margin-top: 2.5rem;
+  margin-top: 1.75rem;
+}
+
+.headline {
   font-size: clamp(var(--step-0), 1rem + 1vw, var(--step-1));
   line-height: 1.45;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.intro > p + p {
+  margin-top: 0.65rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.actions li + li {
+  margin-top: 0;
+}
+
+.actions a {
+  padding-inline: 0.75rem;
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.actions li:first-child a {
+  background: var(--link);
+  color: var(--paper);
+  border-color: var(--link);
 }
 
 section {
-  margin-top: 3rem;
+  margin-top: clamp(2rem, 6vw, 3.5rem);
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
 }
 
 h2 {
   margin-bottom: 0.75rem;
-  font-size: var(--step-0);
+  font-size: var(--step-1);
   font-weight: 700;
-  line-height: inherit;
+  line-height: 1.25;
   text-wrap: balance;
+}
+
+h3 {
+  font-size: var(--step-0);
+  line-height: 1.35;
 }
 
 p,
@@ -141,16 +216,19 @@ li {
   text-wrap: pretty;
 }
 
-/* The parenthetical in a section name is a note to the name, not part of it. */
-h2 span {
-  font-weight: 400;
+.period,
+.employer {
   color: var(--muted);
 }
 
-/* One spacing value inside sections: list items sit as far apart as paragraphs. */
+.period {
+  font-size: 0.9em;
+  font-variant-numeric: tabular-nums;
+}
+
 p + p,
 li + li {
-  margin-top: 1em;
+  margin-top: 0.75em;
 }
 
 ul {
@@ -159,6 +237,64 @@ ul {
 
 li::marker {
   color: var(--muted);
+}
+
+.roles article + article {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.roles p + p {
+  margin-top: 0;
+}
+
+.roles ul {
+  margin-top: 0.65rem;
+}
+
+section > div > h3 + *,
+section > div > p + h3 {
+  margin-top: 1rem;
+}
+
+.correction {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--muted);
+  border-radius: 0.25rem;
+}
+
+.facts > div,
+.projects li,
+.education li {
+  padding-block: 0.65rem;
+  border-top: 1px solid var(--rule);
+}
+
+.facts dt,
+.projects a {
+  font-weight: 700;
+}
+
+.projects,
+.education {
+  padding: 0;
+  list-style: none;
+}
+
+.projects li {
+  padding-block-start: 0;
+}
+
+.projects strong {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.projects li + li,
+.education li + li {
+  margin-top: 0;
 }
 
 a {
@@ -170,42 +306,14 @@ a {
 }
 
 a:hover {
+  text-decoration-line: underline;
   text-decoration-thickness: 2px;
   text-decoration-color: currentColor;
 }
 
-/* A filled link, not a ring: a ring drew over the full stop after a link.
-   The transparent outline turns visible in forced-colours mode. */
 a:focus-visible {
-  outline: 2px solid transparent;
-  border-radius: 2px;
-  background: var(--link);
-  color: var(--paper);
-  text-decoration: none;
-}
-
-code {
-  padding: 0.1em 0.2em;
-  border-radius: 0.25em;
-  background: var(--code-ground);
-  font-family: var(--mono);
-  font-size: 0.875em;
-  white-space: nowrap;
-}
-
-/* The GitHub handle is a string to type, with a 3 in place of an e: the code face shows each character exactly. */
-.handle {
-  font-family: var(--mono);
-  font-size: 0.9em;
-}
-
-/* Model and dataset names stay on one line; a break inside them misreads as two names.
-   An em query follows the reader's font size: with text at 200% on a phone the column is
-   narrower than the longest name, so there the names wrap instead of scrolling sideways. */
-@media (min-width: 20em) {
-  .nowrap {
-    white-space: nowrap;
-  }
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
 }
 
 /* Wide screens: section names hang in a left column, text stays in one measure. */
@@ -220,7 +328,7 @@ code {
   }
 
   .intro {
-    margin-top: 3.5rem;
+    margin-top: 2rem;
     margin-left: calc(var(--label) + var(--gap));
   }
 
@@ -228,7 +336,6 @@ code {
     display: grid;
     grid-template-columns: var(--label) minmax(0, var(--measure));
     column-gap: var(--gap);
-    margin-top: 3.5rem;
   }
 
   h2 {
@@ -238,5 +345,85 @@ code {
   /* Bullets hang in the gutter so item text lines up with the paragraphs. */
   ul {
     padding-left: 0;
+  }
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+    --ink: oklch(0.16 0.014 255);
+    --muted: oklch(0.36 0.014 255);
+    --link: var(--ink);
+  }
+
+  body {
+    padding: 0;
+    background: transparent;
+    font-size: 11pt;
+    line-height: 1.35;
+  }
+
+  nav,
+  .skip,
+  .intro .actions {
+    display: none;
+  }
+
+  h1 {
+    margin-top: 0;
+    font-size: 24pt;
+  }
+
+  .intro {
+    margin: 1rem 0 0;
+  }
+
+  section {
+    display: block;
+    margin-top: 1rem;
+    padding-top: 0.6rem;
+  }
+
+  h2,
+  h3 {
+    margin-bottom: 0.4rem;
+    break-after: avoid;
+  }
+
+  li,
+  .correction,
+  .facts > div {
+    break-inside: avoid;
+  }
+
+  .roles ul {
+    padding-inline-start: 1.1em;
+  }
+
+  .roles article + article {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+  }
+
+  p + p,
+  li + li {
+    margin-top: 0.4em;
+  }
+
+  .text-link,
+  .actions a {
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: underline;
+  }
+
+  .projects strong {
+    min-height: 0;
+  }
+
+  .actions li:first-child a {
+    background: transparent;
+    color: var(--ink);
   }
 }
