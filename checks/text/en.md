@@ -1,8 +1,8 @@
 Skip to content
 # Szymon Jędryczko
 Enterprise IT System Analyst at Emitel S.A.
-I deploy language models and build tools for document search.
-I run the company AI chat in production. I have worked in IT since 2023. I started in penetration testing before building backend services.
+I build AI applications for employees and customers.
+At Emitel, I connect language models to company systems. Employees can search documents and prepare tickets for review. I run some models on local hardware.
 - [LinkedIn](https://www.linkedin.com/in/szymon-jedryczko)
 - [Email](mailto:szymonjedryczko1@gmail.com)
 - [GitHub](https://github.com/NetBr3ak)
@@ -10,12 +10,11 @@ I run the company AI chat in production. I have worked in IT since 2023. I start
 ### Enterprise IT System Analyst
 Emitel S.A.
 since April 2025
-- I am the only AI specialist at the company. I take AI projects from idea to production: language model applications, document search (RAG), MCP servers and local inference.
-- I built the company AI chat in Open WebUI and run it in Docker. It uses Gemini in the cloud, a local Qwen model on llama.cpp, search over company documents and 5 MCP servers. Before each update, I test whether I can roll it back.
-- On one RTX 5090, I increased Qwen3.8-27B generation speed from 63–75 to 97–122 tokens per second. I used speculative decoding in llama.cpp and chose settings by measuring speed and GPU memory use.
-- I built document search for AI assistants. It combines vector search and BM25 in Qdrant. When I found that 74.6% of the measured passages exceeded the 512-token limit, I switched to splitting text by model tokens.
-- I ported 4 of the 5 MCP servers from Python to Rust. All 97 reference responses matched byte for byte. Two larger differential test suites found no differences.
-- I built an IT service desk assistant that runs in production. It uses Gemini to classify tickets from Polish descriptions and draft them. It submits a ticket only after the user confirms.
+- I built a document search engine in Qdrant. I combine search by meaning with BM25 keyword matching, then rerank the passages before passing them to the language model.
+- I deployed an assistant that drafts a ticket from a description in Polish. Gemini suggests the category and writes the draft. The application checks the category, priority and required fields. It submits the ticket only after the user confirms.
+- I built and maintain the company AI chat using Open WebUI and Docker. It uses Gemini, a local model served by llama.cpp and read-only MCP tools. Before an update, I check that I can roll it back.
+- I ported MCP servers from Python to Rust. In regression tests, the Rust responses matched the reference responses byte for byte.
+- I compared generation speed in llama.cpp on one RTX 5090. Qwen3.8-27B ran at 63–75 tokens per second without speculative decoding and 97–122 with it enabled.
 ### Mid-Level IT Systems and Applications Maintenance Specialist
 Emitel S.A.
 January to April 2025
@@ -37,13 +36,13 @@ January to July 2023 · Freelance
 
 ## Research
 ### HSPMN: hybrid language models, 2026
-I wrote a draft paper on models that combine the Mamba architecture with attention. The draft has not been peer reviewed.
-I trained the models on one RTX 5090 using PyTorch and Triton kernels. When I checked my results, I found a bug in the training targets. I fixed it in version 5.1.0. The training runs still need to be repeated.
-Correction: I retracted the claimed 3.32x speedup. In a repeat measurement, the model reached 0.95x the speed of the compiled dense model.
+In an unreviewed draft paper, I described a model that routes tokens to Gated DeltaNet or Native Sparse Attention.
+When reviewing the results, I found incorrectly shifted training targets and access to future tokens. Version 5.1.0 fixes the reference code. I have not repeated training at the original scale.
+Correction: I retracted the claimed 3.32x speedup. An earlier report listed 0.95x for HSPMN v3.0 against a compiled dense model. That comparison predates the fixes.
 [HSPMN on GitHub](https://github.com/NetBr3ak/hspmn)
 
 ## After hours
-In the evenings and at weekends, I work on personal projects. My day job comes first.
+Outside work, I build my own software and contribute to open source projects.
 ### Voxmill: offline transcription on Apple computers
 App
 I wrote the app in Rust and TypeScript using Tauri 2 and whisper.cpp. It turns speech into text without an internet connection.
@@ -55,12 +54,12 @@ Availability
 I released the app in September 2026. It is free from version 0.4.0.
 [Voxmill on tenzanlogic.com](https://tenzanlogic.com/en/voxmill/)
 ### Other projects and open source contributions
-- [BETON](https://github.com/NetBr3ak/beton) · 2026
-  I wrote a Claude Code plugin. After each agent edit, it runs linters, type checks and the affected tests. It also blocks skipped tests.
-- [hdfour](https://github.com/NetBr3ak/hdfour) · 2026
-  I wrote a Rust reader for HDF4 and HDF-EOS2 files, with Python and WebAssembly bindings. In tests, I compare the values it reads with those from the HDF4 C library. Work on it continues.
 - [Astro](https://github.com/withastro/astro/pull/18660) · 2026
-  My change to Astro was merged. It preloads variable fonts when the file covers the full requested weight range.
+  I reproduced a bug in how Astro preloads a variable font for a range of weights. Astro merged my fix and a regression test.
+- [hdfour](https://github.com/NetBr3ak/hdfour) · 2026
+  I wrote a Rust reader for HDF4 and HDF-EOS2 files, with Python and WebAssembly bindings. Tests compare its output with the reference HDF4 C library. Work is ongoing.
+- [BETON](https://github.com/NetBr3ak/beton) · 2026
+  I wrote a Claude Code plugin that runs installed linters, type checks and related tests after an edit. It follows local Python imports to find tests affected by the change.
 
 ## Education
 - I started a part-time master’s programme in International Management at Krakow University of Economics in October 2026.

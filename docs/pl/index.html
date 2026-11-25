@@ -6,15 +6,15 @@
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f9fafc" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14171d" media="(prefers-color-scheme: dark)">
-<title>Szymon Jędryczko | Projekty AI w Emitelu</title>
-<meta name="description" content="W Emitelu wdrażam modele językowe i buduję narzędzia do wyszukiwania w dokumentach. Po godzinach rozwijam Voxmill.">
+<title>Szymon Jędryczko | Aplikacje AI i integracje</title>
+<meta name="description" content="Tworzę aplikacje AI dla pracowników i klientów. Wyszukiwanie w dokumentach, integracje z systemami i lokalne modele językowe.">
 <link rel="canonical" href="https://netbr3ak.github.io/pl/">
 <link rel="alternate" hreflang="en" href="https://netbr3ak.github.io/">
 <link rel="alternate" hreflang="pl" href="https://netbr3ak.github.io/pl/">
 <link rel="alternate" hreflang="x-default" href="https://netbr3ak.github.io/">
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Szymon Jędryczko | Projekty AI w Emitelu">
-<meta property="og:description" content="W Emitelu wdrażam modele językowe i buduję narzędzia do wyszukiwania w dokumentach. Po godzinach rozwijam Voxmill.">
+<meta property="og:title" content="Szymon Jędryczko | Aplikacje AI i integracje">
+<meta property="og:description" content="Tworzę aplikacje AI dla pracowników i klientów. Wyszukiwanie w dokumentach, integracje z systemami i lokalne modele językowe.">
 <meta property="og:url" content="https://netbr3ak.github.io/pl/">
 <meta property="og:site_name" content="Szymon Jędryczko">
 <meta property="og:locale" content="pl_PL">
@@ -27,8 +27,8 @@
 <meta property="profile:last_name" content="Jędryczko">
 <meta property="profile:username" content="NetBr3ak">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Szymon Jędryczko | Projekty AI w Emitelu">
-<meta name="twitter:description" content="W Emitelu wdrażam modele językowe i buduję narzędzia do wyszukiwania w dokumentach. Po godzinach rozwijam Voxmill.">
+<meta name="twitter:title" content="Szymon Jędryczko | Aplikacje AI i integracje">
+<meta name="twitter:description" content="Tworzę aplikacje AI dla pracowników i klientów. Wyszukiwanie w dokumentach, integracje z systemami i lokalne modele językowe.">
 <meta name="twitter:image" content="https://netbr3ak.github.io/pl/og.png">
 <meta name="twitter:image:alt" content="Szymon Jędryczko, Enterprise IT System Analyst w Emitelu S.A.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -39,8 +39,8 @@
   "@type": "ProfilePage",
   "@id": "https://netbr3ak.github.io/pl/#profilepage",
   "url": "https://netbr3ak.github.io/pl/",
-  "name": "Szymon Jędryczko | Projekty AI w Emitelu",
-  "description": "W Emitelu wdrażam modele językowe i buduję narzędzia do wyszukiwania w dokumentach. Po godzinach rozwijam Voxmill.",
+  "name": "Szymon Jędryczko | Aplikacje AI i integracje",
+  "description": "Tworzę aplikacje AI dla pracowników i klientów. Wyszukiwanie w dokumentach, integracje z systemami i lokalne modele językowe.",
   "inLanguage": "pl",
   "dateCreated": "2026-11-16T18:48:00+01:00",
   "dateModified": "2026-11-25T13:28:47+01:00",
@@ -96,8 +96,8 @@
   </header>
   <main id="main" tabindex="-1">
     <div class="intro">
-      <p class="headline">Wdrażam modele językowe i buduję narzędzia do wyszukiwania w dokumentach.</p>
-      <p>Utrzymuję firmowy czat AI w środowisku produkcyjnym. Pracuję w IT od 2023 roku. Zaczynałem od testów penetracyjnych, a potem tworzyłem usługi backendowe.</p>
+      <p class="headline">Tworzę aplikacje AI dla pracowników i klientów.</p>
+      <p>W Emitelu łączę modele językowe z systemami firmowymi. Pracownicy mogą wyszukiwać informacje w dokumentach i przygotowywać zgłoszenia do zatwierdzenia. Część modeli uruchamiam na lokalnym sprzęcie.</p>
       <ul class="actions">
         <li><a href="https://www.linkedin.com/in/szymon-jedryczko">LinkedIn</a></li>
         <li><a href="mailto:szymonjedryczko1@gmail.com">E-mail</a></li>
@@ -114,12 +114,11 @@
             <p class="employer">Emitel S.A.</p>
             <p class="period">od kwietnia 2025</p>
             <ul>
-              <li>Jestem jedyną osobą zajmującą się AI w firmie. Prowadzę projekty AI od pomysłu do wdrożenia: aplikacje oparte na modelach językowych, wyszukiwanie w dokumentach (RAG), serwery MCP i lokalne uruchamianie modeli.</li>
-              <li>Zbudowałem firmowy czat AI w Open WebUI i utrzymuję go w Dockerze. Czat korzysta z Gemini w chmurze, lokalnego modelu Qwen na llama.cpp, wyszukiwania w dokumentach firmy i 5 serwerów MCP. Przed każdą aktualizacją sprawdzam, czy mogę ją wycofać.</li>
-              <li>Na jednej karcie RTX 5090 zwiększyłem szybkość generowania tekstu przez Qwen3.8-27B z 63–75 do 97–122 tokenów na sekundę. Użyłem dekodowania spekulatywnego w llama.cpp. Ustawienia dobrałem na podstawie pomiarów szybkości i użycia pamięci GPU.</li>
-              <li>Zbudowałem wyszukiwarkę dokumentów dla asystentów AI. Łączę w niej wyszukiwanie wektorowe z BM25 w Qdrant. Gdy pomiar wykazał, że 74,6% sprawdzonych fragmentów przekraczało limit 512 tokenów, zacząłem dzielić tekst według tokenów modelu.</li>
-              <li>Przepisałem 4 z 5 serwerów MCP z Pythona na Rust. Wszystkie 97 odpowiedzi referencyjnych były identyczne bajt po bajcie. Dwa większe zestawy testów różnicowych nie wykazały różnic.</li>
-              <li>Zbudowałem asystenta wsparcia IT, który działa w środowisku produkcyjnym. Za pomocą Gemini klasyfikuje zgłoszenia na podstawie polskich opisów i przygotowuje ich treść. Wysyła zgłoszenie dopiero po potwierdzeniu przez użytkownika.</li>
+              <li>Zbudowałem wyszukiwarkę dokumentów w Qdrant. Łączę wyszukiwanie po znaczeniu z dopasowaniem słów przez BM25. Przed przekazaniem wyników modelowi ponownie oceniam trafność fragmentów.</li>
+              <li>Wdrożyłem asystenta, który z opisu po polsku przygotowuje szkic zgłoszenia. Gemini proponuje kategorię i treść. Aplikacja sprawdza kategorię, priorytet i wymagane pola. Zgłoszenie trafia do systemu po zatwierdzeniu przez użytkownika.</li>
+              <li>Zbudowałem i utrzymuję firmowy czat AI w Dockerze z Open WebUI. Czat korzysta z Gemini, lokalnego modelu uruchamianego przez llama.cpp i narzędzi MCP tylko do odczytu. Przed aktualizacją sprawdzam, czy mogę ją wycofać.</li>
+              <li>Przeniosłem serwery MCP z Pythona do Rusta. W testach regresji odpowiedzi wersji w Ruście były identyczne bajt po bajcie z odpowiedziami referencyjnymi.</li>
+              <li>Porównałem szybkość generowania w llama.cpp na jednej karcie RTX 5090. Qwen3.8-27B osiągał 63–75 tokenów na sekundę bez dekodowania spekulatywnego i 97–122 po jego włączeniu.</li>
             </ul>
           </article>
           <article>
@@ -163,16 +162,16 @@
       <h2 id="research">Badania</h2>
       <div>
         <h3>HSPMN: hybrydowe modele językowe, 2026</h3>
-        <p>Napisałem szkic artykułu o modelach, które łączą architekturę Mamba z mechanizmem uwagi. Szkic nie był recenzowany.</p>
-        <p>Trenowałem modele na jednej karcie RTX 5090 w PyTorchu, używając kerneli Tritona. Podczas sprawdzania wyników znalazłem błąd w celu treningu. Poprawka jest w wersji 5.1.0. Treningi trzeba powtórzyć.</p>
-        <p class="correction"><strong>Korekta:</strong> wycofałem deklarowane przyspieszenie 3,32x. W ponownym pomiarze model osiągnął 0,95x szybkości skompilowanego modelu gęstego.</p>
+        <p>W nierecenzowanym szkicu artykułu opisałem model, który kieruje tokeny do Gated DeltaNet lub Native Sparse Attention.</p>
+        <p>Podczas sprawdzania wyników wykryłem błędne przesunięcie celu treningu i odczyt przyszłych tokenów. Wersja 5.1.0 poprawia kod referencyjny. Nie powtórzyłem jeszcze treningów w pierwotnej skali.</p>
+        <p class="correction"><strong>Korekta:</strong> wycofałem deklarowane przyspieszenie 3,32x. Dawny opis podawał 0,95x dla HSPMN v3.0 względem skompilowanego modelu gęstego. To nie jest wynik po poprawkach.</p>
         <p><a href="https://github.com/NetBr3ak/hspmn" class="text-link">HSPMN na GitHubie</a></p>
       </div>
     </section>
     <section aria-labelledby="after-hours">
       <h2 id="after-hours">Po godzinach</h2>
       <div>
-        <p>Wieczorami i w weekendy rozwijam własne projekty. Etat jest dla mnie na pierwszym miejscu.</p>
+        <p>Po godzinach rozwijam własne oprogramowanie i współtworzę projekty open source.</p>
         <h3>Voxmill: transkrypcja offline na komputerach Apple</h3>
         <dl class="facts">
           <div>
@@ -196,16 +195,16 @@
         <h3>Inne projekty i wkład w open source</h3>
         <ul class="projects">
           <li>
-            <a href="https://github.com/NetBr3ak/beton" class="text-link">BETON</a><span class="period"> · 2026</span>
-            <p>Napisałem wtyczkę do Claude Code. Po każdej edycji agenta uruchamia lintery, kontrolę typów i testy związane ze zmianą. Blokuje też pomijanie testów.</p>
+            <a href="https://github.com/withastro/astro/pull/18660" class="text-link">Astro</a><span class="period"> · 2026</span>
+            <p>Odtworzyłem błąd ładowania fontu zmiennego dla zakresu grubości. Projekt Astro przyjął moją poprawkę i test, który wykrywa powrót błędu.</p>
           </li>
           <li>
             <a href="https://github.com/NetBr3ak/hdfour" class="text-link">hdfour</a><span class="period"> · 2026</span>
-            <p>Napisałem czytnik plików HDF4 i HDF-EOS2 w Ruście z interfejsami dla Pythona i WebAssembly. W testach porównuję odczytane wartości z wynikami biblioteki HDF4 w C. Prace nad nim trwają.</p>
+            <p>Napisałem w Ruście czytnik plików HDF4 i HDF-EOS2 z interfejsami dla Pythona i WebAssembly. W testach porównuję odczyt z wynikami biblioteki referencyjnej HDF4 w C. Prace trwają.</p>
           </li>
           <li>
-            <a href="https://github.com/withastro/astro/pull/18660" class="text-link">Astro</a><span class="period"> · 2026</span>
-            <p>Moja zmiana w Astro została przyjęta. Wczytuje ona font zmienny z wyprzedzeniem, gdy plik obejmuje cały żądany zakres grubości.</p>
+            <a href="https://github.com/NetBr3ak/beton" class="text-link">BETON</a><span class="period"> · 2026</span>
+            <p>Napisałem wtyczkę do Claude Code. Po edycji uruchamia zainstalowane lintery, kontrolę typów i powiązane testy. W Pythonie śledzi lokalne importy, żeby znaleźć testy związane ze zmianą.</p>
           </li>
         </ul>
       </div>

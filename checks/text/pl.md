@@ -1,8 +1,8 @@
 Przejdź do treści
 # Szymon Jędryczko
 Enterprise IT System Analyst w Emitelu S.A.
-Wdrażam modele językowe i buduję narzędzia do wyszukiwania w dokumentach.
-Utrzymuję firmowy czat AI w środowisku produkcyjnym. Pracuję w IT od 2023 roku. Zaczynałem od testów penetracyjnych, a potem tworzyłem usługi backendowe.
+Tworzę aplikacje AI dla pracowników i klientów.
+W Emitelu łączę modele językowe z systemami firmowymi. Pracownicy mogą wyszukiwać informacje w dokumentach i przygotowywać zgłoszenia do zatwierdzenia. Część modeli uruchamiam na lokalnym sprzęcie.
 - [LinkedIn](https://www.linkedin.com/in/szymon-jedryczko)
 - [E-mail](mailto:szymonjedryczko1@gmail.com)
 - [GitHub](https://github.com/NetBr3ak)
@@ -10,12 +10,11 @@ Utrzymuję firmowy czat AI w środowisku produkcyjnym. Pracuję w IT od 2023 rok
 ### Enterprise IT System Analyst
 Emitel S.A.
 od kwietnia 2025
-- Jestem jedyną osobą zajmującą się AI w firmie. Prowadzę projekty AI od pomysłu do wdrożenia: aplikacje oparte na modelach językowych, wyszukiwanie w dokumentach (RAG), serwery MCP i lokalne uruchamianie modeli.
-- Zbudowałem firmowy czat AI w Open WebUI i utrzymuję go w Dockerze. Czat korzysta z Gemini w chmurze, lokalnego modelu Qwen na llama.cpp, wyszukiwania w dokumentach firmy i 5 serwerów MCP. Przed każdą aktualizacją sprawdzam, czy mogę ją wycofać.
-- Na jednej karcie RTX 5090 zwiększyłem szybkość generowania tekstu przez Qwen3.8-27B z 63–75 do 97–122 tokenów na sekundę. Użyłem dekodowania spekulatywnego w llama.cpp. Ustawienia dobrałem na podstawie pomiarów szybkości i użycia pamięci GPU.
-- Zbudowałem wyszukiwarkę dokumentów dla asystentów AI. Łączę w niej wyszukiwanie wektorowe z BM25 w Qdrant. Gdy pomiar wykazał, że 74,6% sprawdzonych fragmentów przekraczało limit 512 tokenów, zacząłem dzielić tekst według tokenów modelu.
-- Przepisałem 4 z 5 serwerów MCP z Pythona na Rust. Wszystkie 97 odpowiedzi referencyjnych były identyczne bajt po bajcie. Dwa większe zestawy testów różnicowych nie wykazały różnic.
-- Zbudowałem asystenta wsparcia IT, który działa w środowisku produkcyjnym. Za pomocą Gemini klasyfikuje zgłoszenia na podstawie polskich opisów i przygotowuje ich treść. Wysyła zgłoszenie dopiero po potwierdzeniu przez użytkownika.
+- Zbudowałem wyszukiwarkę dokumentów w Qdrant. Łączę wyszukiwanie po znaczeniu z dopasowaniem słów przez BM25. Przed przekazaniem wyników modelowi ponownie oceniam trafność fragmentów.
+- Wdrożyłem asystenta, który z opisu po polsku przygotowuje szkic zgłoszenia. Gemini proponuje kategorię i treść. Aplikacja sprawdza kategorię, priorytet i wymagane pola. Zgłoszenie trafia do systemu po zatwierdzeniu przez użytkownika.
+- Zbudowałem i utrzymuję firmowy czat AI w Dockerze z Open WebUI. Czat korzysta z Gemini, lokalnego modelu uruchamianego przez llama.cpp i narzędzi MCP tylko do odczytu. Przed aktualizacją sprawdzam, czy mogę ją wycofać.
+- Przeniosłem serwery MCP z Pythona do Rusta. W testach regresji odpowiedzi wersji w Ruście były identyczne bajt po bajcie z odpowiedziami referencyjnymi.
+- Porównałem szybkość generowania w llama.cpp na jednej karcie RTX 5090. Qwen3.8-27B osiągał 63–75 tokenów na sekundę bez dekodowania spekulatywnego i 97–122 po jego włączeniu.
 ### Mid-Level IT Systems and Applications Maintenance Specialist
 Emitel S.A.
 styczeń–kwiecień 2025
@@ -37,13 +36,13 @@ styczeń–lipiec 2023 · freelance
 
 ## Badania
 ### HSPMN: hybrydowe modele językowe, 2026
-Napisałem szkic artykułu o modelach, które łączą architekturę Mamba z mechanizmem uwagi. Szkic nie był recenzowany.
-Trenowałem modele na jednej karcie RTX 5090 w PyTorchu, używając kerneli Tritona. Podczas sprawdzania wyników znalazłem błąd w celu treningu. Poprawka jest w wersji 5.1.0. Treningi trzeba powtórzyć.
-Korekta: wycofałem deklarowane przyspieszenie 3,32x. W ponownym pomiarze model osiągnął 0,95x szybkości skompilowanego modelu gęstego.
+W nierecenzowanym szkicu artykułu opisałem model, który kieruje tokeny do Gated DeltaNet lub Native Sparse Attention.
+Podczas sprawdzania wyników wykryłem błędne przesunięcie celu treningu i odczyt przyszłych tokenów. Wersja 5.1.0 poprawia kod referencyjny. Nie powtórzyłem jeszcze treningów w pierwotnej skali.
+Korekta: wycofałem deklarowane przyspieszenie 3,32x. Dawny opis podawał 0,95x dla HSPMN v3.0 względem skompilowanego modelu gęstego. To nie jest wynik po poprawkach.
 [HSPMN na GitHubie](https://github.com/NetBr3ak/hspmn)
 
 ## Po godzinach
-Wieczorami i w weekendy rozwijam własne projekty. Etat jest dla mnie na pierwszym miejscu.
+Po godzinach rozwijam własne oprogramowanie i współtworzę projekty open source.
 ### Voxmill: transkrypcja offline na komputerach Apple
 Program
 Napisałem program w Ruście i TypeScripcie, używając Tauri 2 i whisper.cpp. Program zamienia mowę na tekst bez połączenia z internetem.
@@ -55,12 +54,12 @@ Dostępność
 Program wydałem we wrześniu 2026 roku. Od wersji 0.4.0 jest bezpłatny.
 [Voxmill na tenzanlogic.com](https://tenzanlogic.com/voxmill/)
 ### Inne projekty i wkład w open source
-- [BETON](https://github.com/NetBr3ak/beton) · 2026
-  Napisałem wtyczkę do Claude Code. Po każdej edycji agenta uruchamia lintery, kontrolę typów i testy związane ze zmianą. Blokuje też pomijanie testów.
-- [hdfour](https://github.com/NetBr3ak/hdfour) · 2026
-  Napisałem czytnik plików HDF4 i HDF-EOS2 w Ruście z interfejsami dla Pythona i WebAssembly. W testach porównuję odczytane wartości z wynikami biblioteki HDF4 w C. Prace nad nim trwają.
 - [Astro](https://github.com/withastro/astro/pull/18660) · 2026
-  Moja zmiana w Astro została przyjęta. Wczytuje ona font zmienny z wyprzedzeniem, gdy plik obejmuje cały żądany zakres grubości.
+  Odtworzyłem błąd ładowania fontu zmiennego dla zakresu grubości. Projekt Astro przyjął moją poprawkę i test, który wykrywa powrót błędu.
+- [hdfour](https://github.com/NetBr3ak/hdfour) · 2026
+  Napisałem w Ruście czytnik plików HDF4 i HDF-EOS2 z interfejsami dla Pythona i WebAssembly. W testach porównuję odczyt z wynikami biblioteki referencyjnej HDF4 w C. Prace trwają.
+- [BETON](https://github.com/NetBr3ak/beton) · 2026
+  Napisałem wtyczkę do Claude Code. Po edycji uruchamia zainstalowane lintery, kontrolę typów i powiązane testy. W Pythonie śledzi lokalne importy, żeby znaleźć testy związane ze zmianą.
 
 ## Wykształcenie
 - Od października 2026 studiuję zarządzanie międzynarodowe na Uniwersytecie Ekonomicznym w Krakowie. To niestacjonarne studia magisterskie.

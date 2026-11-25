@@ -6,15 +6,15 @@
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f9fafc" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14171d" media="(prefers-color-scheme: dark)">
-<title>Szymon Jędryczko | AI projects at Emitel</title>
-<meta name="description" content="I deploy language models and build document search at Emitel. Outside work, I develop Voxmill, an offline transcription app.">
+<title>Szymon Jędryczko | AI Applications and Integration</title>
+<meta name="description" content="I build AI applications for employees and customers: document search, integrations with company systems and locally hosted language models.">
 <link rel="canonical" href="https://netbr3ak.github.io/">
 <link rel="alternate" hreflang="en" href="https://netbr3ak.github.io/">
 <link rel="alternate" hreflang="pl" href="https://netbr3ak.github.io/pl/">
 <link rel="alternate" hreflang="x-default" href="https://netbr3ak.github.io/">
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Szymon Jędryczko | AI projects at Emitel">
-<meta property="og:description" content="I deploy language models and build document search at Emitel. Outside work, I develop Voxmill, an offline transcription app.">
+<meta property="og:title" content="Szymon Jędryczko | AI Applications and Integration">
+<meta property="og:description" content="I build AI applications for employees and customers: document search, integrations with company systems and locally hosted language models.">
 <meta property="og:url" content="https://netbr3ak.github.io/">
 <meta property="og:site_name" content="Szymon Jędryczko">
 <meta property="og:locale" content="en_GB">
@@ -27,8 +27,8 @@
 <meta property="profile:last_name" content="Jędryczko">
 <meta property="profile:username" content="NetBr3ak">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Szymon Jędryczko | AI projects at Emitel">
-<meta name="twitter:description" content="I deploy language models and build document search at Emitel. Outside work, I develop Voxmill, an offline transcription app.">
+<meta name="twitter:title" content="Szymon Jędryczko | AI Applications and Integration">
+<meta name="twitter:description" content="I build AI applications for employees and customers: document search, integrations with company systems and locally hosted language models.">
 <meta name="twitter:image" content="https://netbr3ak.github.io/og.png">
 <meta name="twitter:image:alt" content="Szymon Jędryczko, Enterprise IT System Analyst at Emitel S.A.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -39,8 +39,8 @@
   "@type": "ProfilePage",
   "@id": "https://netbr3ak.github.io/#profilepage",
   "url": "https://netbr3ak.github.io/",
-  "name": "Szymon Jędryczko | AI projects at Emitel",
-  "description": "I deploy language models and build document search at Emitel. Outside work, I develop Voxmill, an offline transcription app.",
+  "name": "Szymon Jędryczko | AI Applications and Integration",
+  "description": "I build AI applications for employees and customers: document search, integrations with company systems and locally hosted language models.",
   "inLanguage": "en",
   "dateCreated": "2026-11-16T18:48:00+01:00",
   "dateModified": "2026-11-25T13:28:47+01:00",
@@ -96,8 +96,8 @@
   </header>
   <main id="main" tabindex="-1">
     <div class="intro">
-      <p class="headline">I deploy language models and build tools for document search.</p>
-      <p>I run the company AI chat in production. I have worked in IT since 2023. I started in penetration testing before building backend services.</p>
+      <p class="headline">I build AI applications for employees and customers.</p>
+      <p>At Emitel, I connect language models to company systems. Employees can search documents and prepare tickets for review. I run some models on local hardware.</p>
       <ul class="actions">
         <li><a href="https://www.linkedin.com/in/szymon-jedryczko">LinkedIn</a></li>
         <li><a href="mailto:szymonjedryczko1@gmail.com">Email</a></li>
@@ -114,12 +114,11 @@
             <p class="employer">Emitel S.A.</p>
             <p class="period">since April 2025</p>
             <ul>
-              <li>I am the only AI specialist at the company. I take AI projects from idea to production: language model applications, document search (RAG), MCP servers and local inference.</li>
-              <li>I built the company AI chat in Open WebUI and run it in Docker. It uses Gemini in the cloud, a local Qwen model on llama.cpp, search over company documents and 5 MCP servers. Before each update, I test whether I can roll it back.</li>
-              <li>On one RTX 5090, I increased Qwen3.8-27B generation speed from 63–75 to 97–122 tokens per second. I used speculative decoding in llama.cpp and chose settings by measuring speed and GPU memory use.</li>
-              <li>I built document search for AI assistants. It combines vector search and BM25 in Qdrant. When I found that 74.6% of the measured passages exceeded the 512-token limit, I switched to splitting text by model tokens.</li>
-              <li>I ported 4 of the 5 MCP servers from Python to Rust. All 97 reference responses matched byte for byte. Two larger differential test suites found no differences.</li>
-              <li>I built an IT service desk assistant that runs in production. It uses Gemini to classify tickets from Polish descriptions and draft them. It submits a ticket only after the user confirms.</li>
+              <li>I built a document search engine in Qdrant. I combine search by meaning with BM25 keyword matching, then rerank the passages before passing them to the language model.</li>
+              <li>I deployed an assistant that drafts a ticket from a description in Polish. Gemini suggests the category and writes the draft. The application checks the category, priority and required fields. It submits the ticket only after the user confirms.</li>
+              <li>I built and maintain the company AI chat using Open WebUI and Docker. It uses Gemini, a local model served by llama.cpp and read-only MCP tools. Before an update, I check that I can roll it back.</li>
+              <li>I ported MCP servers from Python to Rust. In regression tests, the Rust responses matched the reference responses byte for byte.</li>
+              <li>I compared generation speed in llama.cpp on one RTX 5090. Qwen3.8-27B ran at 63–75 tokens per second without speculative decoding and 97–122 with it enabled.</li>
             </ul>
           </article>
           <article>
@@ -163,16 +162,16 @@
       <h2 id="research">Research</h2>
       <div>
         <h3>HSPMN: hybrid language models, 2026</h3>
-        <p>I wrote a draft paper on models that combine the Mamba architecture with attention. The draft has not been peer reviewed.</p>
-        <p>I trained the models on one RTX 5090 using PyTorch and Triton kernels. When I checked my results, I found a bug in the training targets. I fixed it in version 5.1.0. The training runs still need to be repeated.</p>
-        <p class="correction"><strong>Correction:</strong> I retracted the claimed 3.32x speedup. In a repeat measurement, the model reached 0.95x the speed of the compiled dense model.</p>
+        <p>In an unreviewed draft paper, I described a model that routes tokens to Gated DeltaNet or Native Sparse Attention.</p>
+        <p>When reviewing the results, I found incorrectly shifted training targets and access to future tokens. Version 5.1.0 fixes the reference code. I have not repeated training at the original scale.</p>
+        <p class="correction"><strong>Correction:</strong> I retracted the claimed 3.32x speedup. An earlier report listed 0.95x for HSPMN v3.0 against a compiled dense model. That comparison predates the fixes.</p>
         <p><a href="https://github.com/NetBr3ak/hspmn" class="text-link">HSPMN on GitHub</a></p>
       </div>
     </section>
     <section aria-labelledby="after-hours">
       <h2 id="after-hours">After hours</h2>
       <div>
-        <p>In the evenings and at weekends, I work on personal projects. My day job comes first.</p>
+        <p>Outside work, I build my own software and contribute to open source projects.</p>
         <h3>Voxmill: offline transcription on Apple computers</h3>
         <dl class="facts">
           <div>
@@ -196,16 +195,16 @@
         <h3>Other projects and open source contributions</h3>
         <ul class="projects">
           <li>
-            <a href="https://github.com/NetBr3ak/beton" class="text-link">BETON</a><span class="period"> · 2026</span>
-            <p>I wrote a Claude Code plugin. After each agent edit, it runs linters, type checks and the affected tests. It also blocks skipped tests.</p>
+            <a href="https://github.com/withastro/astro/pull/18660" class="text-link">Astro</a><span class="period"> · 2026</span>
+            <p>I reproduced a bug in how Astro preloads a variable font for a range of weights. Astro merged my fix and a regression test.</p>
           </li>
           <li>
             <a href="https://github.com/NetBr3ak/hdfour" class="text-link">hdfour</a><span class="period"> · 2026</span>
-            <p>I wrote a Rust reader for HDF4 and HDF-EOS2 files, with Python and WebAssembly bindings. In tests, I compare the values it reads with those from the HDF4 C library. Work on it continues.</p>
+            <p>I wrote a Rust reader for HDF4 and HDF-EOS2 files, with Python and WebAssembly bindings. Tests compare its output with the reference HDF4 C library. Work is ongoing.</p>
           </li>
           <li>
-            <a href="https://github.com/withastro/astro/pull/18660" class="text-link">Astro</a><span class="period"> · 2026</span>
-            <p>My change to Astro was merged. It preloads variable fonts when the file covers the full requested weight range.</p>
+            <a href="https://github.com/NetBr3ak/beton" class="text-link">BETON</a><span class="period"> · 2026</span>
+            <p>I wrote a Claude Code plugin that runs installed linters, type checks and related tests after an edit. It follows local Python imports to find tests affected by the change.</p>
           </li>
         </ul>
       </div>
