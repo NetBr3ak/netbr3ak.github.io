@@ -156,13 +156,14 @@ h1 {
 
 .headline {
   font-size: clamp(var(--step-0), 1rem + 1vw, var(--step-1));
-  line-height: 1.45;
+  line-height: 1.35;
   font-weight: 700;
   text-wrap: balance;
 }
 
 .intro > p + p {
-  margin-top: 0.65rem;
+  margin-top: 0.9rem;
+  max-width: 32rem;
 }
 
 .actions {
@@ -250,7 +251,11 @@ li::marker {
 }
 
 .roles ul {
-  margin-top: 0.65rem;
+  margin-top: 0.85rem;
+}
+
+.roles article:first-child h3 {
+  font-size: var(--step-1);
 }
 
 section > div > h3 + *,
