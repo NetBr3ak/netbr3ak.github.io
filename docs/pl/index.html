@@ -43,7 +43,7 @@
   "description": "W Emitelu wdrażam modele językowe i buduję narzędzia do wyszukiwania w dokumentach. Po godzinach rozwijam Voxmill.",
   "inLanguage": "pl",
   "dateCreated": "2026-11-16T18:48:00+01:00",
-  "dateModified": "2026-11-25T12:49:48+01:00",
+  "dateModified": "2026-11-25T13:28:47+01:00",
   "mainEntity": {
     "@type": "Person",
     "@id": "https://netbr3ak.github.io/#person",
@@ -52,7 +52,7 @@
     "familyName": "Jędryczko",
     "alternateName": "NetBr3ak",
     "jobTitle": "Enterprise IT System Analyst",
-    "url": "https://netbr3ak.github.io/pl/",
+    "url": "https://netbr3ak.github.io/",
     "sameAs": [
       "https://github.com/NetBr3ak",
       "https://www.linkedin.com/in/szymon-jedryczko",
@@ -114,10 +114,12 @@
             <p class="employer">Emitel S.A.</p>
             <p class="period">od kwietnia 2025</p>
             <ul>
-              <li>Wdrażam aplikacje oparte na modelach językowych. Zbudowałem firmowy czat AI w Open WebUI i utrzymuję go w Dockerze. Przed każdą aktualizacją sprawdzam, czy mogę ją wycofać.</li>
+              <li>Jestem jedyną osobą zajmującą się AI w firmie. Prowadzę projekty AI od pomysłu do wdrożenia: aplikacje oparte na modelach językowych, wyszukiwanie w dokumentach (RAG), serwery MCP i lokalne uruchamianie modeli.</li>
+              <li>Zbudowałem firmowy czat AI w Open WebUI i utrzymuję go w Dockerze. Czat korzysta z Gemini w chmurze, lokalnego modelu Qwen na llama.cpp, wyszukiwania w dokumentach firmy i 5 serwerów MCP. Przed każdą aktualizacją sprawdzam, czy mogę ją wycofać.</li>
               <li>Na jednej karcie RTX 5090 zwiększyłem szybkość generowania tekstu przez Qwen3.8-27B z 63–75 do 97–122 tokenów na sekundę. Użyłem dekodowania spekulatywnego w llama.cpp. Ustawienia dobrałem na podstawie pomiarów szybkości i użycia pamięci GPU.</li>
-              <li>Zbudowałem wyszukiwarkę dokumentów dla asystentów AI. Łączę w niej wyszukiwanie wektorowe z BM25 w Qdrant. Gdy pomiar wykazał, że 74,6% fragmentów przekraczało limit 512 tokenów, zacząłem dzielić tekst według tokenów modelu.</li>
-              <li>Przeniosłem część serwerów MCP z Pythona na Rust. W teście wszystkie 97 odpowiedzi referencyjnych zgadzało się bajt w bajt.</li>
+              <li>Zbudowałem wyszukiwarkę dokumentów dla asystentów AI. Łączę w niej wyszukiwanie wektorowe z BM25 w Qdrant. Gdy pomiar wykazał, że 74,6% sprawdzonych fragmentów przekraczało limit 512 tokenów, zacząłem dzielić tekst według tokenów modelu.</li>
+              <li>Przepisałem 4 z 5 serwerów MCP z Pythona na Rust. Wszystkie 97 odpowiedzi referencyjnych były identyczne bajt po bajcie. Dwa większe zestawy testów różnicowych nie wykazały różnic.</li>
+              <li>Zbudowałem asystenta wsparcia IT, który działa w środowisku produkcyjnym. Za pomocą Gemini klasyfikuje zgłoszenia na podstawie polskich opisów i przygotowuje ich treść. Wysyła zgłoszenie dopiero po potwierdzeniu przez użytkownika.</li>
             </ul>
           </article>
           <article>
@@ -134,13 +136,13 @@
             <p class="employer">Bank Polskiej Spółdzielczości S.A.</p>
             <p class="period">czerwiec–październik 2024</p>
             <ul>
-              <li>Pisałem skrypty VBA do przetwarzania danych. W Excelu tworzyłem prognozy przychodów i pulpity wskaźników KPI.</li>
+              <li>Pisałem skrypty VBA do przetwarzania danych. W Excelu tworzyłem prognozy przychodów i pulpity KPI.</li>
             </ul>
           </article>
           <article>
             <h3>Software Engineer</h3>
             <p class="employer">Eminus Systems</p>
-            <p class="period">lipiec 2023 – czerwiec 2024 · Praca na zlecenie</p>
+            <p class="period">lipiec 2023 – czerwiec 2024 · freelance</p>
             <ul>
               <li>Budowałem usługi backendowe. Dodałem do CI/CD kontrole bezpieczeństwa i analizę statyczną kodu.</li>
             </ul>
@@ -148,9 +150,9 @@
           <article>
             <h3>Penetration Tester</h3>
             <p class="employer">Eminus Systems</p>
-            <p class="period">styczeń–lipiec 2023 · Praca na zlecenie</p>
+            <p class="period">styczeń–lipiec 2023 · freelance</p>
             <ul>
-              <li>Testowałem bezpieczeństwo aplikacji internetowych, API i infrastruktury.</li>
+              <li>Testowałem bezpieczeństwo aplikacji internetowych, API i infrastruktury (Burp Suite, Metasploit, Nmap).</li>
               <li>Sprawdzałem kod pod kątem bezpieczeństwa. W testach dynamicznych korzystałem z listy OWASP Top 10.</li>
             </ul>
           </article>
@@ -163,14 +165,14 @@
         <h3>HSPMN: hybrydowe modele językowe, 2026</h3>
         <p>Napisałem szkic artykułu o modelach, które łączą architekturę Mamba z mechanizmem uwagi. Szkic nie był recenzowany.</p>
         <p>Trenowałem modele na jednej karcie RTX 5090 w PyTorchu, używając kerneli Tritona. Podczas sprawdzania wyników znalazłem błąd w celu treningu. Poprawka jest w wersji 5.1.0. Treningi trzeba powtórzyć.</p>
-        <p class="correction"><strong>Korekta:</strong> Wycofałem deklarowane przyspieszenie 3,32x. W ponownym pomiarze model osiągnął 0,95x szybkości skompilowanego modelu gęstego.</p>
+        <p class="correction"><strong>Korekta:</strong> wycofałem deklarowane przyspieszenie 3,32x. W ponownym pomiarze model osiągnął 0,95x szybkości skompilowanego modelu gęstego.</p>
         <p><a href="https://github.com/NetBr3ak/hspmn" class="text-link">HSPMN na GitHubie</a></p>
       </div>
     </section>
     <section aria-labelledby="after-hours">
       <h2 id="after-hours">Po godzinach</h2>
       <div>
-        <p>Pod nazwą Tenzan Logic rozwijam własne projekty wieczorami i w weekendy. Etat jest dla mnie na pierwszym miejscu.</p>
+        <p>Wieczorami i w weekendy rozwijam własne projekty. Etat jest dla mnie na pierwszym miejscu.</p>
         <h3>Voxmill: transkrypcja offline na komputerach Apple</h3>
         <dl class="facts">
           <div>
@@ -187,27 +189,23 @@
           </div>
           <div>
             <dt>Dostępność</dt>
-            <dd>Program wydałem we wrześniu 2026 roku. Od wersji 0.4.0 jest bezpłatny i nie wymaga klucza.</dd>
+            <dd>Program wydałem we wrześniu 2026 roku. Od wersji 0.4.0 jest bezpłatny.</dd>
           </div>
         </dl>
         <p><a href="https://tenzanlogic.com/voxmill/" class="text-link">Voxmill na tenzanlogic.com</a></p>
         <h3>Inne projekty i wkład w open source</h3>
         <ul class="projects">
           <li>
-            <strong>Helio</strong>
-            <p>Przygotowałem wersję demonstracyjną, która analizuje dane z falowników farm fotowoltaicznych.</p>
-          </li>
-          <li>
             <a href="https://github.com/NetBr3ak/beton" class="text-link">BETON</a><span class="period"> · 2026</span>
-            <p>Napisałem wtyczkę do Claude Code. Po zmianie pliku uruchamia ona lintery, kontrolę typów i testy związane ze zmianą. Blokuje też pomijanie testów.</p>
+            <p>Napisałem wtyczkę do Claude Code. Po każdej edycji agenta uruchamia lintery, kontrolę typów i testy związane ze zmianą. Blokuje też pomijanie testów.</p>
           </li>
           <li>
             <a href="https://github.com/NetBr3ak/hdfour" class="text-link">hdfour</a><span class="period"> · 2026</span>
-            <p>Napisałem czytnik plików HDF4 i HDF-EOS2 w Ruście z interfejsami dla Pythona i WebAssembly. W testach porównuję odczytane wartości z wynikami biblioteki HDF4 w C.</p>
+            <p>Napisałem czytnik plików HDF4 i HDF-EOS2 w Ruście z interfejsami dla Pythona i WebAssembly. W testach porównuję odczytane wartości z wynikami biblioteki HDF4 w C. Prace nad nim trwają.</p>
           </li>
           <li>
             <a href="https://github.com/withastro/astro/pull/18660" class="text-link">Astro</a><span class="period"> · 2026</span>
-            <p>Moja poprawka do Astro została przyjęta. Pozwala wczytać font zmienny z wyprzedzeniem, gdy plik obejmuje cały żądany zakres grubości.</p>
+            <p>Moja zmiana w Astro została przyjęta. Wczytuje ona font zmienny z wyprzedzeniem, gdy plik obejmuje cały żądany zakres grubości.</p>
           </li>
         </ul>
       </div>
@@ -217,23 +215,23 @@
       <div>
         <ul class="education">
           <li>Od października 2026 studiuję zarządzanie międzynarodowe na Uniwersytecie Ekonomicznym w Krakowie. To niestacjonarne studia magisterskie.</li>
-          <li>W lutym 2025 ukończyłem informatykę i ekonometrię na Uniwersytecie Andrzeja Frycza Modrzewskiego w Krakowie. Uzyskałem tytuł inżyniera ze specjalnością w zakresie bezpieczeństwa informacji.</li>
+          <li>W lutym 2025 ukończyłem informatykę i ekonometrię na Uniwersytecie Andrzeja Frycza Modrzewskiego w Krakowie. Uzyskałem tytuł inżyniera. Specjalizowałem się w bezpieczeństwie informacji.</li>
           <li>W listopadzie 2024 zdobyłem certyfikat Cisco Ethical Hacker.</li>
-          <li>W konkursie Proggy-Buggy firmy DataArt napisałem najkrótsze poprawne rozwiązanie w kategorii Superheroes.</li>
-          <li>Polski to mój język ojczysty. Swój angielski oceniam na poziom C1.</li>
+          <li>W maju 2024 w konkursie Proggy-Buggy firmy DataArt napisałem najkrótsze poprawne rozwiązanie na poziomie Superheroes.</li>
+          <li>Polski to mój język ojczysty. Swój angielski oceniam na poziomie C1.</li>
         </ul>
       </div>
     </section>
     <section aria-labelledby="contact">
       <h2 id="contact">Kontakt</h2>
       <div>
-        <p>Napisz do mnie na LinkedIn lub e-mailem.</p>
+        <p>Napisz do mnie na LinkedInie lub e-mailem.</p>
         <p><a href="mailto:szymonjedryczko1@gmail.com" class="text-link">szymonjedryczko1@gmail.com</a></p>
         <ul class="actions">
           <li><a href="https://www.linkedin.com/in/szymon-jedryczko">LinkedIn</a></li>
           <li><a href="https://github.com/NetBr3ak">GitHub</a></li>
         </ul>
-        <p><a href="https://szymonjedryczko.vercel.app/" class="text-link">Portfolio zawodowe</a></p>
+        <p><a href="https://szymonjedryczko.vercel.app/" class="text-link">szymonjedryczko.vercel.app</a></p>
       </div>
     </section>
   </main>
