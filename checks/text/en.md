@@ -51,7 +51,7 @@ I sign the code and updates. The app goes through Apple notarisation.
 Measurement
 In my September 2026 test on FLEURS, the word error rate (WER) was 7.7% on 758 Polish recordings and 6.7% on 647 English recordings.
 Availability
-I released the app in September 2026. It is free from version 0.4.0.
+I released the app in September 2026.
 [Voxmill on tenzanlogic.com](https://tenzanlogic.com/en/voxmill/)
 ### Other projects and open source contributions
 - [Astro](https://github.com/withastro/astro/pull/18660) · 2026

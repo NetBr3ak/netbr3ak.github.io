@@ -51,7 +51,7 @@ Podpisuję kod i aktualizacje. Program przechodzi notaryzację Apple.
 Pomiar
 We wrześniu 2026 roku w moim teście na zbiorze FLEURS wskaźnik błędów słów (WER) wyniósł 7,7% na 758 polskich nagraniach i 6,7% na 647 angielskich nagraniach.
 Dostępność
-Program wydałem we wrześniu 2026 roku. Od wersji 0.4.0 jest bezpłatny.
+Program wydałem we wrześniu 2026 roku.
 [Voxmill na tenzanlogic.com](https://tenzanlogic.com/voxmill/)
 ### Inne projekty i wkład w open source
 - [Astro](https://github.com/withastro/astro/pull/18660) · 2026
