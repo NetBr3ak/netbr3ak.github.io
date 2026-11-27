@@ -1,10 +1,10 @@
-// Browser checks, against a server on 127.0.0.1:4480 for docs/ that checks/browser.sh starts:
+// Browser checks against the local docs/ server started by checks/browser.sh:
 // axe and console in both colour schemes, sideways scroll, keyboard path, fonts used, measure, frames, og.png.
 const fs = require('node:fs');
 const { chromium } = require('playwright');
 const AxeBuilder = require('@axe-core/playwright');
 
-const BASE = 'http://127.0.0.1:4480';
+const BASE = process.argv[2] || 'http://127.0.0.1:4480';
 const OUT = 'test-results/frames';
 const PAGES = { en: '/', pl: '/pl/' };
 const problems = [];
